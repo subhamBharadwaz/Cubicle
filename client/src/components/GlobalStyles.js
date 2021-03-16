@@ -94,6 +94,38 @@ ${'' /* Navbar */}
 ${'' /* ///////////////////// */}
 
 
+${'' /* Alert */}
+.alert{
+  padding:0.8rem;
+  margin:1rem 0;
+  opacity:0.9;
+  background:#f4f4f4;
+  color:#333;
+}
+.alert-primary{
+  background:#17a2b8;
+  color:#fff;
+}
+.alert-light{
+  background:#f4f4f4;
+  color:#333;
+}
+.alert-dark{
+  background:#343a40;
+  color:#fff;
+
+}
+.alert-danger{
+  background:#dc3545;
+  color:#fff;
+}
+.alert-success{
+  background:#28a745;
+  color:#fff;
+}
+
+
+
 ${'' /* Expense Style */}
 
 
@@ -124,13 +156,7 @@ ${'' /* Expense Style */}
   margin: 5px 0;
 }
 
-.money.plus {
-  color: #2ecc71;
-}
 
-.money.minus {
-  color: #c0392b;
-}
 .plus {
   color: #2ecc71;
 }
