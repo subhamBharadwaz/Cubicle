@@ -14,10 +14,10 @@ const LoginPage = () => {
 };
 
 const LoginStyle = styled.div`
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; */
 `;
 
 export default LoginPage;
