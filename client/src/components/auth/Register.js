@@ -35,9 +35,9 @@ const Register = () => {
     }
   };
 
-  // Redirect to root
+  // Redirect to Home
   if (isAuthenticated) {
-    return <Redirect to='/' />;
+    return <Redirect to='/home' />;
   }
 
   return (

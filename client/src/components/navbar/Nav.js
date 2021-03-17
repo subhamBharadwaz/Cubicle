@@ -27,7 +27,7 @@ const Nav = () => {
   const authLinks = (
     <>
       <li className='nav-text'>
-        <Link to='/'>
+        <Link to='/home'>
           <AiIcons.AiFillHome />
           <span className='nav-span'> Home</span>
         </Link>
@@ -52,7 +52,7 @@ const Nav = () => {
       </li>
 
       <li className='nav-text'>
-        <Link onClick={logoutHandler} to='!#'>
+        <Link onClick={logoutHandler} to='/'>
           <AiIcons.AiOutlineLogout />
           <span className='nav-span'>Logout</span>
         </Link>

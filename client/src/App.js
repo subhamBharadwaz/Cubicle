@@ -40,16 +40,14 @@ const App = () => {
       <Nav />
       <Alert />
       <Switch>
-        <Route path='/welcome' component={Welcome} exact />
-
-        <PrivateRoute path='/' component={Home} exact />
-
+        <Route path='/' component={Welcome} exact />
         <Route path='/register' component={RegisterPage} />
-
         <Route path='/login' component={LoginPage} />
 
+        <PrivateRoute path='/home' component={Home} exact />
         <PrivateRoute path='/todo' component={Todo} />
         <PrivateRoute path='/expense' component={Expense} />
+
         <Route path='' component={NotFound} />
       </Switch>
     </div>
