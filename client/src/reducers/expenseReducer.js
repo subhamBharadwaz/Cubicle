@@ -9,6 +9,7 @@ const expenseReducer = (state = initState, action) => {
     case 'GET_TRANSACTIONS':
       return {
         ...state,
+
         transactions: action.payload,
         loading: false,
       };
@@ -18,7 +19,7 @@ const expenseReducer = (state = initState, action) => {
         transactions: [...state.transactions, action.payload],
       };
 
-    case 'DELETE_TRANSACTIONS':
+    case 'DELETE_TRANSACTION':
       return {
         ...state,
         transactions: state.transactions.filter(

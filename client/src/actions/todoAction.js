@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { setAlert } from './alertActions';
 
 // Get the current user's todos
 export const getTodos = () => async (dispatch) => {
@@ -18,6 +17,7 @@ export const getTodos = () => async (dispatch) => {
 };
 
 // Add Todo
+
 export const addTodo = (todo) => async (dispatch) => {
   const config = {
     headers: {
@@ -27,7 +27,7 @@ export const addTodo = (todo) => async (dispatch) => {
   try {
     const res = await axios.post('/api/v1/todos', todo, config);
     dispatch({
-      type: 'ADD_TODOS',
+      type: 'ADD_TODO',
       payload: res.data.data,
     });
   } catch (err) {

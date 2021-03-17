@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // Actions
 import { getTransactions } from '../../actions/expenseAction';
-import { deleteTransaction } from '../../actions/expenseAction';
+
 // Components
 import { Transaction } from './Transaction';
 
@@ -11,15 +11,14 @@ import { Transaction } from './Transaction';
 import styled from 'styled-components';
 
 //  icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export const TransactionList = () => {
+  const { transactions } = useSelector((state) => state.expenses);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTransactions());
-  }, []);
-  const { transactions } = useSelector((state) => state.expenses);
+  }, [dispatch]);
+
   return (
     <TransactionListStyle>
       <h3>History</h3>
@@ -32,15 +31,6 @@ export const TransactionList = () => {
               className='lis'
               transaction={transaction}
             />
-            <button
-              onClick={() => dispatch(deleteTransaction(transaction._id))}
-              className='expense-delete-btn'
-            >
-              <FontAwesomeIcon
-                icon={faTrash}
-                className='icon expense-delete-icon'
-              />
-            </button>
           </>
         ))}
       </ul>
@@ -53,8 +43,9 @@ const TransactionListStyle = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
   }
-  button {
+  /* button {
     border: none;
     background: none;
     outline: none;
@@ -64,5 +55,5 @@ const TransactionListStyle = styled.div`
     margin-right: 0.5rem;
     flex: 1;
     cursor: pointer;
-  }
+  } */
 `;

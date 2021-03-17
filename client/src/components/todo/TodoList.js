@@ -14,8 +14,8 @@ const TodoList = () => {
 
   useEffect(() => {
     dispatch(getTodos());
-  }, []);
-  const { todos, loading } = useSelector((state) => state.todoList);
+  }, [dispatch]);
+  const { todos } = useSelector((state) => state.todoList);
 
   return (
     <TodoListStyle>

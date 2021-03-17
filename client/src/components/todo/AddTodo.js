@@ -29,7 +29,7 @@ const AddTodo = () => {
 
   return (
     <>
-      <FormStyle onSubmit={submitHandler}>
+      <FormStyle>
         <div className='form-control'>
           <InputStyle
             onChange={(e) => setText(e.target.value)}
@@ -38,7 +38,7 @@ const AddTodo = () => {
             placeholder='enter text...'
           />
         </div>
-        <button className='btn add-todo-btn'>
+        <button onClick={submitHandler} className='btn add-todo-btn'>
           <FontAwesomeIcon icon={faPlus} className='icon add-icon' />
         </button>
       </FormStyle>
