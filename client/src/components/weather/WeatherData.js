@@ -27,8 +27,8 @@ const WeatherData = () => {
 
   return (
     <StyledWeatherData>
-      <div className='search'>
-        <BsIcons.BsSearch id='search' onClick={searchHandler} />
+      <div className='search' onClick={searchHandler}>
+        <BsIcons.BsSearch id='search' />
       </div>
       <form className='form'>
         <label htmlFor='searchWeather'>Another City</label>
@@ -94,6 +94,7 @@ const StyledWeatherData = styled(motion.div)`
     width: 5rem;
     height: 4rem;
     background-color: rgba(8, 8, 8, 0.7);
+    cursor: pointer;
   }
   #search {
     font-size: 2.5rem;
@@ -102,7 +103,6 @@ const StyledWeatherData = styled(motion.div)`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    cursor: pointer;
   }
   .form {
     height: 15%;

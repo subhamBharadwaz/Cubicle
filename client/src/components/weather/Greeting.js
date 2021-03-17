@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
+// Moment for date/time
+import moment from 'moment';
 
 import { useSelector, useDispatch } from 'react-redux';
 // Actions
 import { fetchWeather } from '../../actions/weatherAction';
-import {
-  dateBuilder,
-  ampm,
-  hourValue,
-  minuteValue,
-  curTime,
-} from '../../api/time';
+// import {
+//   dateBuilder,
+//   ampm,
+//   hourValue,
+//   minuteValue,
+//   curTime,
+// } from '../../api/time';
 
 // Style and animation
 import styled from 'styled-components';
@@ -34,7 +36,7 @@ const Greeting = () => {
           )}
         </>
 
-        <h3>{`${hourValue()}:${minuteValue()} ${ampm}`}</h3>
+        <h3>{moment().format('LT')}</h3>
       </GreetingData>
       <CurrentWeather>
         <h1>
@@ -43,7 +45,7 @@ const Greeting = () => {
         </h1>
         <h2>
           <div className='cityName'>{weatherInfo.name}</div>
-          <div className='currentDate'>{dateBuilder(new Date())}</div>
+          <div className='currentDate'>{moment().format('MMM Do YY')}</div>
         </h2>
         <h3>
           <div className='icon'>
