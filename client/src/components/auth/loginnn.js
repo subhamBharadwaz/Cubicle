@@ -4,8 +4,11 @@ import styled from 'styled-components';
 
 const loginnn = () => {
   return (
-    <FormStyle className='main'>
-      <form className='login'>
+    <FormStyle>
+      <form class='login'>
+        <h1>Sign Up</h1>
+        <input type='text' placeholder='Username' />
+        <input type='text' placeholder='Username' />
         <input type='text' placeholder='Username' />
         <input type='password' placeholder='Password' />
         <button>Login</button>
@@ -19,9 +22,7 @@ const loginnn = () => {
 };
 
 const FormStyle = styled.div`
-  .main {
-    background: #f45b69;
-  }
+  background-color: #f45b69;
 
   .login {
     overflow: hidden;
@@ -31,7 +32,7 @@ const FormStyle = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 400px;
+    width: 600px;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);

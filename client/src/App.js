@@ -24,7 +24,6 @@ import PrivateRoute from './components/routing/PrivateRoute';
 // Actions
 import setAuthToken from './utils/setAuthToken';
 import { loadUser } from './actions/authActions';
-import loginnn from './components/auth/loginnn';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -48,7 +47,7 @@ const App = () => {
         <PrivateRoute path='/home' component={Home} exact />
         <PrivateRoute path='/todo' component={Todo} />
         <PrivateRoute path='/expense' component={Expense} />
-        <Route path='/test' component={loginnn} />
+
         <Route path='' component={NotFound} />
       </Switch>
     </div>
