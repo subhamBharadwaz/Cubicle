@@ -39,7 +39,7 @@ const Greeting = () => {
       <CurrentWeather>
         <h1>
           <div className='temp'>{weatherInfo.main.temp}</div>
-          <div className='degree'>°</div>
+          <div className='degree'>°c</div>
         </h1>
         <h2>
           <div className='cityName'>{weatherInfo.name}</div>

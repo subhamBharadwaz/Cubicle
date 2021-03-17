@@ -34,6 +34,7 @@ const App = () => {
   useEffect(() => {
     dispatch(loadUser());
   }, []);
+
   return (
     <div className='App'>
       <GlobalStyle />
@@ -41,12 +42,12 @@ const App = () => {
       <Alert />
       <Switch>
         <Route path='/' component={Welcome} exact />
-        <Route path='/register' component={RegisterPage} />
-        <Route path='/login' component={LoginPage} />
+        <Route path='/register' component={RegisterPage} exact />
+        <Route path='/login' component={LoginPage} exact />
 
         <PrivateRoute path='/home' component={Home} exact />
-        <PrivateRoute path='/todo' component={Todo} />
-        <PrivateRoute path='/expense' component={Expense} />
+        <PrivateRoute path='/todo' component={Todo} exact />
+        <PrivateRoute path='/expense' component={Expense} exact />
 
         <Route path='' component={NotFound} />
       </Switch>
