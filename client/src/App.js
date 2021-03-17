@@ -16,6 +16,7 @@ import Home from './pages/Home';
 import RegisterPage from './pages/Register';
 import LoginPage from './pages/Login';
 import Welcome from './pages/Welcome';
+import NotFound from './pages/NotFound';
 
 // Private Route
 import PrivateRoute from './components/routing/PrivateRoute';
@@ -50,7 +51,7 @@ const App = () => {
 
         <PrivateRoute path='/todo' component={Todo} />
         <PrivateRoute path='/expense' component={Expense} />
-        <Route path='' component={Welcome} />
+        <Route path='' component={NotFound} />
       </Switch>
     </div>
   );
