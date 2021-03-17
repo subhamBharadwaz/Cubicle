@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+// Utils
 import { numberWithCommas } from '../../utils/format';
 
 // Style

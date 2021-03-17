@@ -1,4 +1,5 @@
 import React from 'react';
+// Components
 import AddTodo from './AddTodo';
 import TodoList from './TodoList';
 

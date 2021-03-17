@@ -1,5 +1,5 @@
 import React from 'react';
-
+// Utils
 import { numberWithCommas } from '../../utils/format';
 
 // Style

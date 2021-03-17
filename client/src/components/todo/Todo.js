@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteTodo } from '../../actions/todoAction';
 import { Link } from 'react-router-dom';
+// Actions
+import { deleteTodo } from '../../actions/todoAction';
 
 // styles
 import styled from 'styled-components';

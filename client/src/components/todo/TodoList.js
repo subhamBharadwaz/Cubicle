@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+// Components
 import Todo from './Todo';
 import Spinner from '../layout/Spinner';
+// Actions
 import { getTodos } from '../../actions/todoAction';
 
 // Style

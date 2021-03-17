@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
-import { Transaction } from './Transaction';
+
 import { useSelector, useDispatch } from 'react-redux';
+// Actions
 import { getTransactions } from '../../actions/expenseAction';
 import { deleteTransaction } from '../../actions/expenseAction';
+// Components
+import { Transaction } from './Transaction';
 
 // Style
 import styled from 'styled-components';

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+// Actions
 import { login } from '../../actions/authActions';
 
 //  icons

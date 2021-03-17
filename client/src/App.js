@@ -7,7 +7,8 @@ import { useDispatch } from 'react-redux';
 // Import Components and Pages
 import Nav from './components/navbar/Nav';
 import GlobalStyle from './components/GlobalStyles';
-
+// Alert
+import Alert from './components/layout/Alert';
 // Pages
 import Todo from './pages/Todo';
 import Expense from './pages/Expense';
@@ -16,8 +17,6 @@ import RegisterPage from './pages/Register';
 import LoginPage from './pages/Login';
 import Welcome from './pages/Welcome';
 
-// Alert
-import Alert from './components/layout/Alert';
 // Private Route
 import PrivateRoute from './components/routing/PrivateRoute';
 
@@ -45,12 +44,10 @@ const App = () => {
         </Route> */}
         <PrivateRoute path='/' component={Home} exact />
 
-        <Route path='/register'>
-          <RegisterPage />
-        </Route>
-        <Route path='/login'>
-          <LoginPage />
-        </Route>
+        <Route path='/register' component={RegisterPage} />
+
+        <Route path='/login' component={LoginPage} />
+
         <PrivateRoute path='/todo' component={Todo} />
         <PrivateRoute path='/expense' component={Expense} />
         <Route path='' component={Welcome} />

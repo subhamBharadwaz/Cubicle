@@ -1,4 +1,5 @@
 import React from 'react';
+// Components
 import Register from '../components/auth/Register';
 
 // Style

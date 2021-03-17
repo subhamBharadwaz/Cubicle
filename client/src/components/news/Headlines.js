@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+// Actions
 import { fetchTopHeadings } from '../../actions/newsAction';
 
 // Styling and animations

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
+// Actions
 import { fetchWeather } from '../../actions/weatherAction';
+// Icons
 import * as BsIcons from 'react-icons/bs';
 
 // Style and animation
