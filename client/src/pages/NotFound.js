@@ -14,7 +14,7 @@ const NotFound = () => {
         <h1>
           404:
           <small>Page Not Found</small>
-          <Link to='/'>
+          <Link to='/welcome'>
             <button className='btn home-btn'>Home</button>
           </Link>
         </h1>

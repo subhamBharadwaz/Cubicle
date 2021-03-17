@@ -111,7 +111,7 @@ const Nav = () => {
 const Navbar = styled(motion.div)`
   background-color: #121212;
   color: #fff;
-  height: 10vh;
+  min-height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
