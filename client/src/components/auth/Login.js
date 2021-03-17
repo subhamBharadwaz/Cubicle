@@ -1,28 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+// Actions
+import { login } from '../../actions/authActions';
 
+// Style
 import styled from 'styled-components';
 
-const loginnn = () => {
-  return (
-    <FormStyle>
-      <form class='login'>
-        <h1>Sign Up</h1>
-        <input type='text' placeholder='Username' />
-        <input type='text' placeholder='Username' />
-        <input type='text' placeholder='Username' />
-        <input type='password' placeholder='Password' />
-        <button>Login</button>
-      </form>
+const Login = () => {
+  const { isAuthenticated } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
 
-      <a href='https://codepen.io/davinci/' target='_blank'>
-        check my other pens
-      </a>
+  const { email, password } = formData;
+
+  const onChangeHandler = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    dispatch(login(email, password));
+  };
+
+  // Redirect if logged in
+  if (isAuthenticated) {
+    return <Redirect to='/home' />;
+  }
+
+  return (
+    <FormStyle className='container'>
+      <form className='login' onSubmit={onSubmitHandler}>
+        <h1 className='large text-primary'>Sign In</h1>
+        <input
+          type='email'
+          placeholder='Email Address'
+          name='email'
+          value={email}
+          onChange={(e) => onChangeHandler(e)}
+          autocomplete='off'
+          required
+        />
+        <input
+          type='password'
+          placeholder='Password'
+          name='password'
+          minLength='6'
+          value={password}
+          onChange={(e) => onChangeHandler(e)}
+          required
+        />
+        <button type='submit' className='btn btn-primary' value='Login'>
+          Login
+        </button>
+        <div className='sign-up'>
+          <p className='my-1'>New Here?</p>
+          <Link to='/register'>
+            <button class='btn-sign-up'>Sign Up</button>
+          </Link>
+        </div>
+      </form>
     </FormStyle>
   );
 };
 
 const FormStyle = styled.div`
-  background-color: #f45b69;
+  .container {
+  }
 
   .login {
     overflow: hidden;
@@ -33,6 +79,7 @@ const FormStyle = styled.div`
     top: 50%;
     left: 50%;
     width: 600px;
+    min-height: 50vh;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -78,11 +125,17 @@ const FormStyle = styled.div`
     font-size: 16px;
     background: white;
     width: 100%;
-    border: 0;
+    border: none;
+    cursor: pointer;
     padding: 10px 10px;
     margin: 15px -10px;
+    outline: none;
+    transition: all 0.5s ease-in;
+    &:focus {
+      border-bottom: 2px solid red;
+    }
   }
-  .login > button {
+  button {
     font-family: 'Asap', sans-serif;
     cursor: pointer;
     color: #fff;
@@ -98,8 +151,10 @@ const FormStyle = styled.div`
     -webkit-transition: background-color 300ms;
     -moz-transition: background-color 300ms;
     transition: background-color 300ms;
+
+    cursor: pointer;
   }
-  .login > button:hover {
+  button:hover {
     background-color: #f24353;
   }
 
@@ -135,14 +190,20 @@ const FormStyle = styled.div`
       transform: rotate(360deg);
     }
   }
-  a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.6);
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    font-size: 12px;
+
+  .sign-up {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 35%;
+    margin-top: 2rem;
+    p {
+      font-size: 1.2rem;
+    }
+  }
+  .btn-sign-up {
+    margin-left: 0.5rem;
   }
 `;
 
-export default loginnn;
+export default Login;
