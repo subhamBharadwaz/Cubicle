@@ -45,10 +45,16 @@ const TodoContainer = styled.div`
     outline: none;
   }
   .icon {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-right: 0.5rem;
     flex: 1;
     cursor: pointer;
+  }
+  .todo-delete-icon {
+    color: red;
+  }
+  .todo-update-icon {
+    color: #078d07;
   }
 `;
 const TodoStyle = styled.div`
@@ -57,15 +63,16 @@ const TodoStyle = styled.div`
   color: #fff;
   background: linear-gradient(
     90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
   );
-
   padding: 16px;
   border-radius: 5px;
   width: 100%;
+  word-wrap: break-word;
   margin: 1.5rem;
   flex: 2;
+  font-size: 1.5rem;
 `;
 
 export default Todo;

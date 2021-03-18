@@ -52,7 +52,7 @@ const FormStyle = styled.form`
   align-items: center;
   margin-top: 5%;
   button {
-    padding: 6px 16px;
+    padding: 12px 16px;
     border: none;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
@@ -74,9 +74,26 @@ const InputStyle = styled.input`
   padding: 14px 32px 14px 16px;
   border-radius: 4px 0 0 4px;
   border: 2px solid #5d0cff;
+  color: #fff;
   outline: none;
   width: 320px;
+  font-size: 1.5rem;
   background: transparent;
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #fff;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #fff;
+  }
 `;
 
 export default AddTodo;
