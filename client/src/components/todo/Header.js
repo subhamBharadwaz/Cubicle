@@ -6,13 +6,15 @@ import styled from 'styled-components';
 const Header = () => {
   const { user } = useSelector((state) => state.auth);
   return (
-    <HeaderStyle>{user && <h1>What's up, {user.data.name}!</h1>}</HeaderStyle>
+    <HeaderStyle>{user && <h1>What's up, {user.data.name} !</h1>}</HeaderStyle>
   );
 };
 
 const HeaderStyle = styled.div`
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
+  h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+  }
 `;
 
 export default Header;

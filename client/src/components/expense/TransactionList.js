@@ -45,15 +45,4 @@ const TransactionListStyle = styled.div`
     align-items: center;
     flex-direction: column;
   }
-  /* button {
-    border: none;
-    background: none;
-    outline: none;
-  }
-  .icon {
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
-    flex: 1;
-    cursor: pointer;
-  } */
 `;
