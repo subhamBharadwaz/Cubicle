@@ -9,22 +9,21 @@ const GlobalStyle = createGlobalStyle`
 }
 
 html{
-  &::-webkit-scrollbar{
+   &::-webkit-scrollbar{
         width:0.5rem;
     }
     &::-webkit-scrollbar-thumb{
-        background-color: #038dff;
+        background-color: darkgrey;
     }
     &::-webkit-scrollbar-track{
-        background-color: #adadad;
+        background-color: #fff;
     }
-   
 }
 
 body{
   font-family: 'Open Sans', sans-serif;
   font-weight:300;
-  overflow-x: hidden;
+  overflow-x:hidden;
 }
 
 h1{
