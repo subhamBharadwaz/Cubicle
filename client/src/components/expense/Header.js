@@ -19,11 +19,10 @@ export const Header = () => {
 
 const HeaderStyle = styled.div`
   margin-top: 5vh;
-
-  font-size: 1.3rem;
+  color: #fff;
+  font-size: 1.5rem;
   h2 {
     letter-spacing: 1px;
     margin: 0;
-    color: #000;
   }
 `;

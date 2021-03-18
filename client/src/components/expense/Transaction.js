@@ -29,8 +29,8 @@ export const Transaction = ({ transaction }) => {
       <button onClick={deleteHandler} className='expense-delete-btn'>
         <FontAwesomeIcon icon={faTrash} className='icon expense-delete-icon' />
       </button>
-      <button className='btn update-todo-btn'>
-        <FontAwesomeIcon icon={faEdit} className='icon todo-update-icon' />
+      <button className='btn update-expense-btn'>
+        <FontAwesomeIcon icon={faEdit} className='icon expense-update-icon' />
       </button>
     </TransactionStyle>
   );
@@ -49,8 +49,12 @@ const TransactionStyle = styled.div`
       font-size: 1.7rem;
       cursor: pointer;
     }
-    .todo-update-icon {
+    .expense-delete-icon {
+      color: rgb(255, 41, 41);
+    }
+    .expense-update-icon {
       margin-left: 0.5rem;
+      color: #3be744;
     }
   }
 `;

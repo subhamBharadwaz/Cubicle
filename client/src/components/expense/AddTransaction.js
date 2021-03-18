@@ -59,6 +59,8 @@ export const AddTransaction = () => {
 };
 
 const AddTransactionStyle = styled.div`
+  color: #fff;
+
   label {
     display: inline-block;
     margin: 10px 0;
@@ -66,14 +68,19 @@ const AddTransactionStyle = styled.div`
 
   .btn {
     cursor: pointer;
-    background-color: #9c88ff;
+    background: rgb(144, 227, 59);
+    background: linear-gradient(
+      21deg,
+      rgba(144, 227, 59, 1) 3%,
+      rgba(76, 255, 133, 1) 89%
+    );
     box-shadow: var(--box-shadow);
     color: #fff;
     border: 0;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.3rem;
     margin: 10px 0 30px;
-    padding: 10px;
+    padding: 20px;
     width: 100%;
   }
 

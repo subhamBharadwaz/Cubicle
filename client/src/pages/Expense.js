@@ -29,8 +29,13 @@ const Expense = () => {
 };
 
 const ExpenseStyle = styled.div`
+  background: rgb(59, 62, 227);
+  background: linear-gradient(
+    21deg,
+    rgba(59, 62, 227, 1) 2%,
+    rgba(76, 158, 255, 1) 89%
+  );
   .main {
-    background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
     align-items: center;

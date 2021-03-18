@@ -39,6 +39,9 @@ export const TransactionList = () => {
 };
 
 const TransactionListStyle = styled.div`
+  h3 {
+    color: #fff;
+  }
   ul {
     display: flex;
     justify-content: space-between;
