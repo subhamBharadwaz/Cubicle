@@ -8,6 +8,19 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 
+html{
+  &::-webkit-scrollbar{
+        width:0.5rem;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #038dff;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: #adadad;
+    }
+   
+}
+
 body{
   font-family: 'Open Sans', sans-serif;
   font-weight:300;

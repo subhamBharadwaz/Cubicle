@@ -127,7 +127,7 @@ const FormStyle = styled.div`
   .login::before {
     left: 40%;
     bottom: -130%;
-    background-color: rgba(69, 105, 144, 0.15);
+    background-color: rgba(6, 150, 138, 0.2);
     -webkit-animation: wawes 6s infinite linear;
     -moz-animation: wawes 6s infinite linear;
     animation: wawes 6s infinite linear;
@@ -135,7 +135,7 @@ const FormStyle = styled.div`
   .login::after {
     left: 35%;
     bottom: -125%;
-    background-color: rgba(2, 128, 144, 0.2);
+    background-color: rgba(6, 150, 138, 0.2);
     -webkit-animation: wawes 7s infinite;
     -moz-animation: wawes 7s infinite;
     animation: wawes 7s infinite;
@@ -148,7 +148,7 @@ const FormStyle = styled.div`
     background: white;
     width: 100%;
     border: none;
-    cursor: pointer;
+
     padding: 10px 10px;
     margin: 15px -10px;
     outline: none;
