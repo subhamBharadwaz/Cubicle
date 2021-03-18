@@ -12,27 +12,32 @@ import { AddTransaction } from '../components/expense/AddTransaction';
 const Expense = () => {
   return (
     <ExpenseStyle>
-      <Header />
-      <div className='container'>
-        <Balance />
-        <IncomeExpense />
+      <div className='main'>
+        <Header />
 
-        <TransactionList />
+        <div className='container'>
+          <Balance />
+          <IncomeExpense />
 
-        <AddTransaction />
+          <TransactionList />
+
+          <AddTransaction />
+        </div>
       </div>
     </ExpenseStyle>
   );
 };
 
 const ExpenseStyle = styled.div`
-  background-color: #f7f7f7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
+  .main {
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+  }
 
   .container {
     margin: 30px auto;

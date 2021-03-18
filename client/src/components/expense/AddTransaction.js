@@ -23,6 +23,9 @@ export const AddTransaction = () => {
     };
 
     dispatch(addTransaction(newTransaction));
+
+    setText('');
+    setAmount(0);
   };
   return (
     <AddTransactionStyle>

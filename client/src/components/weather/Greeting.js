@@ -67,6 +67,12 @@ const Greeting = () => {
 };
 
 const WeatherGreeting = styled(motion.div)`
+  h2 {
+    color: #ffffff;
+  }
+  h3 {
+    color: #f7f7f7;
+  }
   display: flex;
   flex-direction: column;
   justify-content: space-around;

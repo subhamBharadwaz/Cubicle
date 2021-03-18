@@ -30,14 +30,7 @@ h1{
    font-family: 'Montserrat', sans-serif;
    font-weight: 400; 
 }
-h2{
-  color: #ffffff;
- 
-}
-h3{
-  color: #f7f7f7;
-  
-}
+
 ul{
 
   list-style:none;

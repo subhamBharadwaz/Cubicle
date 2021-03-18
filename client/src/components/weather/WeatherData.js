@@ -75,6 +75,12 @@ const WeatherData = () => {
 };
 
 const StyledWeatherData = styled(motion.div)`
+  h2 {
+    color: #ffffff;
+  }
+  h3 {
+    color: #f7f7f7;
+  }
   height: 100%;
   width: 40vw;
   background-color: rgba(255, 255, 255, 0.09);

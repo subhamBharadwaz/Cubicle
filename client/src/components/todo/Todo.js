@@ -51,10 +51,10 @@ const TodoContainer = styled.div`
     cursor: pointer;
   }
   .todo-delete-icon {
-    color: red;
+    color: rgb(245, 55, 55);
   }
   .todo-update-icon {
-    color: #078d07;
+    color: #6928eb;
   }
 `;
 const TodoStyle = styled.div`
