@@ -8,6 +8,7 @@ const helmet = require('helmet');
 const xss = require('xss-clean');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
+const csurf = require('csurf');
 
 // Load ENV vars
 dotEnv.config({ path: './config/config.env' });
@@ -22,6 +23,8 @@ app.use(express.json());
 
 // Cookie Parser
 app.use(cookieParser());
+// CSURF
+app.use(csurf());
 
 const PORT = process.env.PORT || 5000;
 
