@@ -25,13 +25,11 @@ export const TransactionList = () => {
 
       <ul className="list">
         {transactions.map((transaction) => (
-          <>
-            <Transaction
-              key={transaction._id}
-              className="lis"
-              transaction={transaction}
-            />
-          </>
+          <Transaction
+            key={transaction._id}
+            className="lis"
+            transaction={transaction}
+          />
         ))}
       </ul>
     </TransactionListStyle>
