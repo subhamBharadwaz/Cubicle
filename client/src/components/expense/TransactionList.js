@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 // Actions
-import { getTransactions } from '../../actions/expenseAction';
+import { getTransactions } from "../../actions/expenseAction";
 
 // Components
-import { Transaction } from './Transaction';
+import { Transaction } from "./Transaction";
 
 // Style
-import styled from 'styled-components';
+import styled from "styled-components";
 
 //  icons
 
@@ -23,12 +23,12 @@ export const TransactionList = () => {
     <TransactionListStyle>
       <h3>History</h3>
 
-      <ul className='list'>
+      <ul className="list">
         {transactions.map((transaction) => (
           <>
             <Transaction
               key={transaction._id}
-              className='lis'
+              className="lis"
               transaction={transaction}
             />
           </>

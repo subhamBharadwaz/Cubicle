@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 // Actions
-import { fetchTopHeadings } from '../../actions/newsAction';
+import { fetchTopHeadings } from "../../actions/newsAction";
 
 // Styling and animations
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Headlines = () => {
   const { topHeadlines } = useSelector((state) => state.news);
@@ -16,12 +16,12 @@ const Headlines = () => {
   return (
     <div>
       {topHeadlines.articles.map((data) => (
-        <Articles>
+        <Articles key={data.url}>
           <Content>
             <h2>{data.title}</h2>
             <h4>{data.description}</h4>
             <h5>
-              <a href={data.url} target='_blank' rel='noreferrer'>
+              <a href={data.url} target="_blank" rel="noreferrer">
                 Read More...
               </a>
             </h5>

@@ -8,6 +8,7 @@ const helmet = require("helmet");
 const xss = require("xss-clean");
 const connectDB = require("./config/db");
 const errorHandler = require("./middleware/error");
+const cors = require("cors");
 
 // Load ENV vars
 dotEnv.config({ path: "./config/config.env" });
@@ -38,6 +39,9 @@ app.use(xss());
 
 // Sanitize data
 app.use(mongoSanitize());
+
+// Cors Support
+app.use(cors());
 
 // Mount Router
 app.use("/api/v1/expenses", require("./routes/expense"));

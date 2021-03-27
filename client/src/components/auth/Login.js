@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 // Actions
-import { login } from '../../actions/authActions';
+import { login } from "../../actions/authActions";
 
 // Style
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Login = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const { email, password } = formData;
@@ -27,38 +27,38 @@ const Login = () => {
 
   // Redirect if logged in
   if (isAuthenticated) {
-    return <Redirect to='/home' />;
+    return <Redirect to="/home" />;
   }
 
   return (
-    <FormStyle className='container'>
-      <form className='login' onSubmit={onSubmitHandler}>
-        <h1 className='large text-primary'>Sign In</h1>
+    <FormStyle className="container">
+      <form className="login" onSubmit={onSubmitHandler}>
+        <h1 className="large text-primary">Sign In</h1>
         <input
-          type='email'
-          placeholder='Email Address'
-          name='email'
+          type="email"
+          placeholder="Email Address"
+          name="email"
           value={email}
           onChange={(e) => onChangeHandler(e)}
-          autocomplete='off'
+          autocomplete="off"
           required
         />
         <input
-          type='password'
-          placeholder='Password'
-          name='password'
-          minLength='6'
+          type="password"
+          placeholder="Password"
+          name="password"
+          minLength="6"
           value={password}
           onChange={(e) => onChangeHandler(e)}
           required
         />
-        <button type='submit' className='btn btn-primary' value='Login'>
+        <button type="submit" className="btn btn-primary" value="Login">
           Sign In
         </button>
-        <div className='sign-up'>
-          <p className='my-1'>New Here?</p>
-          <Link to='/register'>
-            <button class='btn-sign-up'>Sign Up</button>
+        <div className="sign-up">
+          <p className="my-1">New Here?</p>
+          <Link to="/register">
+            <button className="btn-sign-up">Sign Up</button>
           </Link>
         </div>
       </form>
@@ -92,7 +92,7 @@ const FormStyle = styled.div`
   }
   .login::before,
   .login::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 600px;
     height: 600px;
@@ -119,7 +119,7 @@ const FormStyle = styled.div`
     animation: wawes 7s infinite;
   }
   .login > input {
-    font-family: 'Asap', sans-serif;
+    font-family: "Asap", sans-serif;
     display: block;
     border-radius: 5px;
     font-size: 16px;
@@ -136,7 +136,7 @@ const FormStyle = styled.div`
     }
   }
   button {
-    font-family: 'Asap', sans-serif;
+    font-family: "Asap", sans-serif;
     cursor: pointer;
     color: #fff;
     font-size: 16px;

@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 // Components
-import Todo from './Todo';
-import Spinner from '../layout/Spinner';
+import Todo from "./Todo";
+import Spinner from "../layout/Spinner";
 // Actions
-import { getTodos } from '../../actions/todoAction';
+import { getTodos } from "../../actions/todoAction";
 
 // Style
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const TodoList = () => {
   const dispatch = useDispatch();
@@ -19,9 +19,9 @@ const TodoList = () => {
 
   return (
     <TodoListStyle>
-      <ul id='list' className='list'>
+      <ul id="list" className="list">
         {todos.map((todo) => (
-          <Todo key={todo.id} todo={todo} />
+          <Todo key={todo._id} todo={todo} />
         ))}
       </ul>
     </TodoListStyle>
