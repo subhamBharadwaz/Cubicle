@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 // Moment for date/time
-import moment from 'moment';
+import moment from "moment";
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 // Actions
-import { fetchWeather } from '../../actions/weatherAction';
+import { fetchWeather } from "../../actions/weatherAction";
 // import {
 //   dateBuilder,
 //   ampm,
@@ -14,16 +14,19 @@ import { fetchWeather } from '../../actions/weatherAction';
 // } from '../../api/time';
 
 // Style and animation
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Greeting = () => {
   const { weatherInfo } = useSelector((state) => state.weather);
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchWeather('Guwahati'));
+    dispatch(fetchWeather("Guwahati"));
   }, [dispatch]);
+  const Capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
   return (
     <WeatherGreeting>
       <GreetingData>
@@ -31,33 +34,33 @@ const Greeting = () => {
           {user && (
             <>
               <h3>Good Morning,</h3>
-              <h1>{user.data.name}</h1>
+              <h1>{Capitalize(user.data.name)}</h1>
             </>
           )}
         </>
 
-        <h3>{moment().format('LT')}</h3>
+        <h3>{moment().format("LT")}</h3>
       </GreetingData>
       <CurrentWeather>
         <h1>
-          <div className='temp'>{weatherInfo.main.temp}</div>
-          <div className='degree'>°c</div>
+          <div className="temp">{weatherInfo.main.temp}</div>
+          <div className="degree">°c</div>
         </h1>
         <h2>
-          <div className='cityName'>{weatherInfo.name}</div>
-          <div className='currentDate'>{moment().format('MMM Do YY')}</div>
+          <div className="cityName">{weatherInfo.name}</div>
+          <div className="currentDate">{moment().format("MMM Do YY")}</div>
         </h2>
         <h3>
-          <div className='icon'>
+          <div className="icon">
             {weatherInfo.weather.map((data) => (
               <img
                 key={data.id}
                 src={`http://openweathermap.org/img/w/${data.icon}.png`}
-                alt=''
+                alt=""
               />
             ))}
           </div>
-          <div className='weatherStatus'>
+          <div className="weatherStatus">
             {weatherInfo.weather.map((data) => data.description)}
           </div>
         </h3>
