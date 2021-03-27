@@ -1,15 +1,18 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
 // Style
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Header = () => {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
+  const Capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
   return (
     <HeaderStyle>
       {isAuthenticated && (
         <>
-          <h2>Hello {user.data.name},</h2>
+          <h2>Hello {Capitalize(user.data.name)},</h2>
           <h3>Here's your spending dashboard!</h3>
         </>
       )}
