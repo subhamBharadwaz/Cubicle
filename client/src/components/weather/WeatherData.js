@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 // Actions
-import { fetchWeather } from '../../actions/weatherAction';
+import { fetchWeather } from "../../actions/weatherAction";
 // Icons
-import * as BsIcons from 'react-icons/bs';
+import * as BsIcons from "react-icons/bs";
 
 // Style and animation
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const WeatherData = () => {
   const { weatherInfo } = useSelector((state) => state.weather);
   const dispatch = useDispatch();
 
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   // Handlers
   const onChangeHandler = (e) => {
@@ -22,21 +22,21 @@ const WeatherData = () => {
   };
   const searchHandler = () => {
     dispatch(fetchWeather(input));
-    setInput('');
+    setInput("");
   };
 
   return (
     <StyledWeatherData>
-      <div className='search' onClick={searchHandler}>
-        <BsIcons.BsSearch id='search' />
+      <div className="search" onClick={searchHandler}>
+        <BsIcons.BsSearch id="search" />
       </div>
-      <form className='form'>
-        <label htmlFor='searchWeather'>Another City</label>
+      <form className="form">
+        <label htmlFor="searchWeather">Another City</label>
         <input
           onChange={onChangeHandler}
           value={input}
-          type='text'
-          name='searchWeather'
+          type="text"
+          name="searchWeather"
         />
       </form>
 
@@ -44,28 +44,28 @@ const WeatherData = () => {
         <h2>Weather Details</h2>
 
         <CurrentWeatherDetails>
-          <div className='weather-holders'>
+          <div className="weather-holders">
             <h3>
               <span>Cloudy</span>
-              <span className='w-data'>{`${weatherInfo.clouds.all}%`}</span>
+              <span className="w-data">{`${weatherInfo.clouds.all}%`}</span>
             </h3>
           </div>
-          <div className='weather-holders'>
+          <div className="weather-holders">
             <h3>
               <span>Humidity</span>
-              <span className='w-data'>{`${weatherInfo.main.humidity}%`}</span>
+              <span className="w-data">{`${weatherInfo.main.humidity}%`}</span>
             </h3>
           </div>
-          <div className='weather-holders'>
+          <div className="weather-holders">
             <h3>
               <span>Wind</span>
-              <span className='w-data'>{`${weatherInfo.wind.speed}km/h`}</span>
+              <span className="w-data">{`${weatherInfo.wind.speed}km/h`}</span>
             </h3>
           </div>
-          <div className='weather-holders'>
+          <div className="weather-holders">
             <h3>
               <span>Pressure</span>
-              <span className='w-data'>{`${weatherInfo.main.pressure}mb`}</span>
+              <span className="w-data">{`${weatherInfo.main.pressure}mb`}</span>
             </h3>
           </div>
         </CurrentWeatherDetails>
@@ -150,7 +150,7 @@ const WeatherDetails = styled(motion.div)`
   flex-direction: column;
   justify-content: space-between;
   @media (max-width: 48rem) {
-    height: 50%;
+    height: 60%;
     font-size: 1rem;
   }
 `;
@@ -176,12 +176,12 @@ const CurrentWeatherDetails = styled(motion.div)`
     font-size: 1rem;
     height: 40%;
     flex-direction: row;
-
+    padding-bottom: 1.5rem;
     .weather-holders {
       h3 {
         flex-direction: column;
         .w-data {
-          margin-top: 0.7rem;
+          margin-top: 0rem;
         }
       }
     }
