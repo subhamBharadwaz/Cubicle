@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
-import { setAlert } from '../../actions/alertActions';
-import { register } from '../../actions/authActions';
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
+import { setAlert } from "../../actions/alertActions";
+import { register } from "../../actions/authActions";
 
 //  icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 // Style
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Register = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    password2: '',
+    name: "",
+    email: "",
+    password: "",
+    password2: "",
   });
 
   const { name, email, password, password2 } = formData;
@@ -29,7 +29,7 @@ const Register = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      dispatch(setAlert('Password don not match!', 'danger'));
+      dispatch(setAlert("Password don not match!", "danger"));
     } else {
       dispatch(register({ name, email, password }));
     }
@@ -37,53 +37,53 @@ const Register = () => {
 
   // Redirect to Home
   if (isAuthenticated) {
-    return <Redirect to='/home' />;
+    return <Redirect to="/home" />;
   }
 
   return (
     <FormStyle>
-      <form className='login' onSubmit={onSubmitHandler}>
-        <h1 className='large text-primary'>Sign Up</h1>
+      <form className="login" onSubmit={onSubmitHandler}>
+        <h1 className="large text-primary">Sign Up</h1>
         <input
-          type='text'
-          placeholder='Your Name'
-          name='name'
+          type="text"
+          placeholder="Your Name"
+          name="name"
           value={name}
           onChange={(e) => onChangeHandler(e)}
-          autocomplete='off'
+          autoComplete="off"
           required
         />
         <input
-          type='email'
-          placeholder='Your Email'
-          name='email'
+          type="email"
+          placeholder="Your Email"
+          name="email"
           value={email}
           onChange={(e) => onChangeHandler(e)}
           required
         />
         <input
-          type='password'
-          placeholder='Password'
-          name='password'
+          type="password"
+          placeholder="Password"
+          name="password"
           value={password}
           onChange={(e) => onChangeHandler(e)}
           required
         />
         <input
-          type='password'
-          placeholder='Confirm Password'
-          name='password2'
+          type="password"
+          placeholder="Confirm Password"
+          name="password2"
           value={password2}
           onChange={(e) => onChangeHandler(e)}
           required
         />
-        <button type='submit' className='btn btn-primary' value='Login'>
+        <button type="submit" className="btn btn-primary" value="Login">
           Sign Up
         </button>
-        <div className='sign-up'>
-          <p className='my-1'>Already have an account?</p>
-          <Link to='/login'>
-            <button class='btn-sign-up'>Sign In</button>
+        <div className="sign-up">
+          <p className="my-1">Already have an account?</p>
+          <Link to="/login">
+            <button class="btn-sign-up">Sign In</button>
           </Link>
         </div>
       </form>
@@ -114,7 +114,7 @@ const FormStyle = styled.div`
   }
   .login::before,
   .login::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 600px;
     height: 600px;
@@ -141,7 +141,7 @@ const FormStyle = styled.div`
     animation: wawes 7s infinite;
   }
   .login > input {
-    font-family: 'Asap', sans-serif;
+    font-family: "Asap", sans-serif;
     display: block;
     border-radius: 5px;
     font-size: 16px;
@@ -158,7 +158,7 @@ const FormStyle = styled.div`
     }
   }
   button {
-    font-family: 'Asap', sans-serif;
+    font-family: "Asap", sans-serif;
     cursor: pointer;
     color: #fff;
     font-size: 16px;

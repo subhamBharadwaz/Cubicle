@@ -9,6 +9,7 @@ const xss = require("xss-clean");
 const connectDB = require("./config/db");
 const errorHandler = require("./middleware/error");
 const cors = require("cors");
+const csrf = require("csurf");
 
 // Load ENV vars
 dotEnv.config({ path: "./config/config.env" });
@@ -24,6 +25,8 @@ app.use(express.json());
 // Cookie Parser
 app.use(cookieParser());
 
+// Setup csurf protection
+const csrfProtection = csrf({ cookie: true });
 const PORT = process.env.PORT || 5000;
 
 // Dev logging middleware
@@ -44,9 +47,9 @@ app.use(mongoSanitize());
 app.use(cors());
 
 // Mount Router
-app.use("/api/v1/expenses", require("./routes/expense"));
-app.use("/api/v1/todos", require("./routes/todos"));
-app.use("/api/v1/auth", require("./routes/auth"));
+app.use("/api/v1/expenses", csrfProtection, require("./routes/expense"));
+app.use("/api/v1/todos", csrfProtection, require("./routes/todos"));
+app.use("/api/v1/auth", csrfProtection, require("./routes/auth"));
 
 app.use(errorHandler);
 

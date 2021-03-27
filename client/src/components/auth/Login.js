@@ -40,7 +40,7 @@ const Login = () => {
           name="email"
           value={email}
           onChange={(e) => onChangeHandler(e)}
-          autocomplete="off"
+          autoComplete="off"
           required
         />
         <input
