@@ -267,11 +267,13 @@ const Head = styled.h1`
   span {
     color: #ff3d3d;
   }
+  @media (max-width: 48rem) {
+    font-size: 3rem;
+  }
 `;
 
 const Div1 = styled.div`
   font-size: 18px;
-
   margin: auto;
   width: 70%;
   border: none;
@@ -288,5 +290,9 @@ const Div1 = styled.div`
   transition: all 0.75s ease-in-out;
   &:hover {
     background: rgba(0, 0, 0, 0.7);
+  }
+
+  @media (max-width: 48rem) {
+    width: 90%;
   }
 `;

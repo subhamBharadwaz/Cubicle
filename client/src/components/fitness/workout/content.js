@@ -6,6 +6,7 @@ export const workout = [
     img:
       "https://images.pexels.com/photos/3823063/pexels-photo-3823063.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     path: "/homeworkout",
+    id: 1,
   },
 
   {
@@ -15,5 +16,6 @@ export const workout = [
     img:
       "https://images.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     path: "/gymworkout",
+    id: 2,
   },
 ];

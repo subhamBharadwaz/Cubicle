@@ -5,6 +5,7 @@ export const cards = [
     image:
       "https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500",
     path: "/workout",
+    id: 1,
   },
   {
     title: "Diet For Gaining and Losing Weight",
@@ -13,6 +14,7 @@ export const cards = [
     image:
       "https://images.pexels.com/photos/209449/pexels-photo-209449.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     path: "/diet",
+    id: 2,
   },
   {
     title: "Pro Tips For Staying Healthy",
@@ -20,5 +22,6 @@ export const cards = [
     image:
       "https://images.pexels.com/photos/7096/people-woman-coffee-meeting.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500",
     path: "/tips",
+    id: 3,
   },
 ];

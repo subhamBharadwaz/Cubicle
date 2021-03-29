@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Card from "../workout/Card";
+import Card from "./Card";
 
 export const Content = () => {
   return (
@@ -14,7 +14,7 @@ export const Content = () => {
         <Head2>
           The <span>plans</span> that will help you to stay fit and healthy
         </Head2>
-        <Card />
+        <Card className="card" />
       </Fade>
     </Main>
   );
@@ -22,6 +22,7 @@ export const Content = () => {
 
 const Main = styled.div`
   height: 100vh;
+  width: 100vw;
   background: url("https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=635&q=80")
     no-repeat center center/cover;
 `;
@@ -30,26 +31,35 @@ const Fade = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
 
-  padding-top: 30px;
+  /* padding-top: 30px; */
 `;
 const Head = styled.h3`
-  max-width: 100%;
-
+  width: 90%;
+  margin: auto;
+  position: relative;
   color: white;
   text-align: center;
-  font-size: 55px;
+  font-size: 3.5rem;
   span {
     color: #ff3d3d;
+  }
+  @media (max-width: 48rem) {
+    font-size: 10vw;
   }
 `;
 const Head2 = styled.h3`
   margin: auto;
-  max-width: 60%;
+  position: relative;
+  max-width: 100%;
   font-size: 36px;
   text-align: center;
   margin-top: 15px;
-  color: #acacac;
+  color: #e9e9e9;
+  letter-spacing: 0.3rem;
   span {
     color: #ff3d3d;
+  }
+  @media (max-width: 48rem) {
+    font-size: 7vw;
   }
 `;

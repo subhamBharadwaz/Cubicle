@@ -6,7 +6,7 @@ export const Tips = () => {
     <Main>
       <Content>
         <h1>
-          Pro Tips For <spans>Staying</spans> Healthy
+          Pro Tips For <span>Staying</span> Healthy
         </h1>
         <ol>
           <li>
@@ -161,7 +161,7 @@ export const Tips = () => {
   );
 };
 const Main = styled.div`
-  padding: 3rem;
+  padding: 1rem;
   background-size: cover;
   background-image: url(https://images.pexels.com/photos/4098232/pexels-photo-4098232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
 `;
@@ -176,7 +176,7 @@ const Content = styled.div`
   h1 {
     margin: 1rem;
   }
-  spans {
+  span {
     color: #ff3d3d;
   }
   h3 {

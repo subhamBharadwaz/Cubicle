@@ -8,16 +8,14 @@ export const Workout = () => {
   return (
     <Cards>
       {workout.map((info) => (
-        <>
-          <Container>
-            <img key={info.img} src={info.img} alt="" />
-            <h3>{info.title}</h3>
-            <p>{info.content}</p>
-            <Link to={info.path}>
-              <Button>LETS START</Button>
-            </Link>
-          </Container>
-        </>
+        <Container key={info.id}>
+          <img src={info.img} alt="" />
+          <h3>{info.title}</h3>
+          <p>{info.content}</p>
+          <Link to={info.path}>
+            <Button>LETS START</Button>
+          </Link>
+        </Container>
       ))}
     </Cards>
   );
@@ -30,17 +28,21 @@ const Cards = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 48rem) {
+    flex-direction: column;
+  }
 `;
 const Container = styled.div`
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.5s;
-  width: 50rem;
-  height: 40rem;
+  width: 45rem;
+  height: 37rem;
   border: none;
   font-size: 1.5rem;
-  padding: 0.8rem;
+  padding: 1rem;
   margin: 0 2rem;
   font-family: "Poppins", sans-serif;
   flex-wrap: wrap;
@@ -62,8 +64,19 @@ const Container = styled.div`
   }
   p {
     font-family: "Poppins", sans-serif;
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: #c0c0c0;
+  }
+  @media (max-width: 48rem) {
+    width: 25rem;
+    margin: 1rem 2rem 0rem;
+    background: rgb(0, 0, 0);
+    img {
+      height: 50%;
+    }
+    p {
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -72,7 +85,7 @@ const Button = styled.button`
   margin-top: 20px;
   display: block;
   text-decoration: none;
-  max-width: 35%;
+  width: 35%;
   padding: 12px;
   font-size: 20px;
   border: none;
@@ -85,6 +98,10 @@ const Button = styled.button`
     color: black;
     transition-duration: 0.9s;
     box-shadow: 0 0 40px #535353;
+  }
+  @media (max-width: 48rem) {
+    width: 50%;
+    padding: 10px;
   }
 `;
 export default Workout;

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -35,8 +35,11 @@ ul{
 
   list-style:none;
 }
+a{
+  text-decoration:none;
+}
 
-${'' /* Navbar */}
+${"" /* Navbar */}
   .nav-menu {
     background-color: #272727;
     width: 250px;
@@ -95,12 +98,12 @@ ${'' /* Navbar */}
   .menu-bars{
     font-size: 40px;
   }
-  ${'' /* ///////////////////// */}
-       ${'' /* Navbar End */}
-${'' /* ///////////////////// */}
+  ${"" /* ///////////////////// */}
+       ${"" /* Navbar End */}
+${"" /* ///////////////////// */}
 
 
-${'' /* Alert */}
+${"" /* Alert */}
 .alert{
   padding:0.8rem;
   margin:1rem 0;
@@ -132,7 +135,7 @@ ${'' /* Alert */}
 
 
 
-${'' /* Expense Style */}
+${"" /* Expense Style */}
 
 
 :root {
