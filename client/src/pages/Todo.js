@@ -61,13 +61,7 @@ const Todo = () => {
 
 const TodoStyle = styled.div`
   color: #fff;
-  background-color: rgba(253, 148, 10, 0.6);
-  background-image: radial-gradient(
-    circle,
-    rgba(249, 167, 43, 0.6) 0%,
-    rgba(250, 144, 38, 0.6) 70%,
-    rgba(251, 108, 31, 0.6) 100%
-  );
+
   min-height: 100vh;
   min-width: 100vw;
   overflow-x: hidden;
