@@ -4,10 +4,6 @@ import { Link, Redirect } from "react-router-dom";
 import { setAlert } from "../../actions/alertActions";
 import { register } from "../../actions/authActions";
 
-//  icons
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-
 // Style
 import styled from "styled-components";
 

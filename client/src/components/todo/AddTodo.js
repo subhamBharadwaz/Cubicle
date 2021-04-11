@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import { useDispatch } from 'react-redux';
+import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { useDispatch } from "react-redux";
 // Actions
-import { addTodo } from '../../actions/todoAction';
+import { addTodo } from "../../actions/todoAction";
 
 //  icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 // Style
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const AddTodo = () => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
@@ -24,22 +24,22 @@ const AddTodo = () => {
     };
     dispatch(addTodo(newTodo));
 
-    setText('');
+    setText("");
   };
 
   return (
     <>
       <FormStyle>
-        <div className='form-control'>
+        <div className="form-control">
           <InputStyle
             onChange={(e) => setText(e.target.value)}
-            type='text'
+            type="text"
             value={text}
-            placeholder='enter text...'
+            placeholder="enter text..."
           />
         </div>
-        <button onClick={submitHandler} className='btn add-todo-btn'>
-          <FontAwesomeIcon icon={faPlus} className='icon add-icon' />
+        <button onClick={submitHandler} className="btn add-todo-btn">
+          <FontAwesomeIcon icon={faPlus} className="icon add-icon" />
         </button>
       </FormStyle>
     </>
@@ -74,14 +74,14 @@ const InputStyle = styled.input`
   padding: 14px 32px 14px 16px;
   border-radius: 4px 0 0 4px;
   border: 2px solid #5d0cff;
-  color: #fff;
+  color: #333;
   outline: none;
   width: 320px;
   font-size: 1.5rem;
   background: transparent;
   ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #fff;
+    color: #333;
     opacity: 1; /* Firefox */
   }
 

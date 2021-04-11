@@ -60,7 +60,7 @@ const Todo = () => {
 };
 
 const TodoStyle = styled.div`
-  color: #fff;
+  color: #333;
 
   min-height: 100vh;
   min-width: 100vw;

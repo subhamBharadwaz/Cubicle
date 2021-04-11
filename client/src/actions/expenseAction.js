@@ -1,16 +1,16 @@
-import axios from 'axios';
+import axios from "axios";
 
-// Get the current user's expenses
+// Get the current user's expense
 export const getTransactions = () => async (dispatch) => {
   try {
-    const res = await axios.get('/api/v1/expenses/me');
+    const res = await axios.get("/api/v1/expenses/me");
     dispatch({
-      type: 'GET_TRANSACTIONS',
+      type: "GET_TRANSACTIONS",
       payload: res.data.data,
     });
   } catch (err) {
     dispatch({
-      type: 'TRANSACTION_ERROR',
+      type: "TRANSACTION_ERROR",
       payload: err.response.data.error,
     });
   }
@@ -20,18 +20,18 @@ export const getTransactions = () => async (dispatch) => {
 export const addTransaction = (transaction) => async (dispatch) => {
   const config = {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
   try {
-    const res = await axios.post('/api/v1/expenses', transaction, config);
+    const res = await axios.post("/api/v1/expenses", transaction, config);
     dispatch({
-      type: 'ADD_TRANSACTIONS',
+      type: "ADD_TRANSACTIONS",
       payload: res.data.data,
     });
   } catch (err) {
     dispatch({
-      type: 'TRANSACTION_ERROR',
+      type: "TRANSACTION_ERROR",
       payload: err.response.data.error,
     });
   }
@@ -43,12 +43,12 @@ export const deleteTransaction = (id) => async (dispatch) => {
     await axios.delete(`/api/v1/expenses/${id}`);
 
     dispatch({
-      type: 'DELETE_TRANSACTION',
+      type: "DELETE_TRANSACTION",
       payload: id,
     });
   } catch (err) {
     dispatch({
-      type: 'TRANSACTION_ERROR',
+      type: "TRANSACTION_ERROR",
       payload: err.response.data.error,
     });
   }
