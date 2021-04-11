@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// Get the current user's expense
+// Get the current user's expenses
 export const getTransactions = () => async (dispatch) => {
   try {
     const res = await axios.get("/api/v1/expenses/me");
