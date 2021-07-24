@@ -20,19 +20,23 @@
 
 ![Fitness](https://user-images.githubusercontent.com/72348711/126858923-642b9feb-1585-4786-b6a0-e7abf1a1300c.png)
 
+---
+
 ## Specs
 
-1.  User authentication.(must be login or register to view the pages)
+1.User authentication.(must be login or register to view the pages)
 
-2.  View current weather (can search by city names)
+1.View current weather (can search by city names)
 
-3.  Vew latest news around the world.
+1.Vew latest news around the world.
 
-4.  Add Todo List.
+1 Add Todo List.
 
-5.  Add Expenses.
+1.Add Expenses.
 
-6.  Fitness Zone.
+1.Fitness Zone.
+
+---
 
 ## Tools
 
@@ -74,6 +78,8 @@ _For Backend:_
 _Connect Backend with frontend:_
 
 - concurrently - https://www.npmjs.com/package/concurrently
+
+---
 
 ## Installation
 
