@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 // Utils
-import { numberWithCommas } from '../../utils/format';
+import { numberWithCommas } from "../../utils/format";
 // Actions
-import { deleteTransaction } from '../../actions/expenseAction';
+import { deleteTransaction } from "../../actions/expenseAction";
 // icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 // Style
-import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
+import styled from "styled-components";
+import { useDispatch } from "react-redux";
 
 export const Transaction = ({ transaction }) => {
   const dispatch = useDispatch();
@@ -16,21 +16,21 @@ export const Transaction = ({ transaction }) => {
     dispatch(deleteTransaction(transaction._id));
   };
 
-  const sign = transaction.amount < 0 ? '-' : '+';
+  const sign = transaction.amount < 0 ? "-" : "+";
 
   return (
     <TransactionStyle>
-      <ListStyle className={transaction.amount < 0 ? 'minus' : 'plus'}>
+      <ListStyle className={transaction.amount < 0 ? "minus" : "plus"}>
         {transaction.text}
         <span>
           {sign}₹{numberWithCommas(Math.abs(transaction.amount))}
         </span>
       </ListStyle>
-      <button onClick={deleteHandler} className='expense-delete-btn'>
-        <FontAwesomeIcon icon={faTrash} className='icon expense-delete-icon' />
+      <button onClick={deleteHandler} className="expense-delete-btn">
+        <FontAwesomeIcon icon={faTrash} className="icon expense-delete-icon" />
       </button>
-      <button className='btn update-expense-btn'>
-        <FontAwesomeIcon icon={faEdit} className='icon expense-update-icon' />
+      <button className="btn update-expense-btn">
+        <FontAwesomeIcon icon={faEdit} className="icon expense-update-icon" />
       </button>
     </TransactionStyle>
   );

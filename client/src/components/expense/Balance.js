@@ -1,9 +1,9 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
 // Utils
-import { numberWithCommas } from '../../utils/format';
+import { numberWithCommas } from "../../utils/format";
 // Style
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Balance = () => {
   const { transactions } = useSelector((state) => state.expenses);
