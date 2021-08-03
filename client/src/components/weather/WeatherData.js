@@ -1,36 +1,36 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux'
 // Actions
-import { fetchWeather } from "../../actions/weatherAction";
+import { fetchWeather } from '../../actions/weatherAction'
 // Icons
-import * as BsIcons from "react-icons/bs";
+import * as BsIcons from 'react-icons/bs'
 
 // Style and animation
-import styled from "styled-components";
-import { motion } from "framer-motion";
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 const WeatherData = () => {
-  const { weatherInfo } = useSelector((state) => state.weather);
-  const dispatch = useDispatch();
+  const { weatherInfo } = useSelector((state) => state.weather)
+  const dispatch = useDispatch()
 
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('')
 
   // Handlers
   const onChangeHandler = (e) => {
-    setInput(e.target.value);
-  };
-  const searchHandler = () => {
-    dispatch(fetchWeather(input));
-    setInput("");
-  };
+    setInput(e.target.value)
+  }
+  const searchHandler = (e) => {
+    dispatch(fetchWeather(input))
+    setInput('')
+  }
 
   return (
     <StyledWeatherData>
       <div className="search" onClick={searchHandler}>
         <BsIcons.BsSearch id="search" />
       </div>
-      <form className="form">
+      <form onSubmit={searchHandler} className="form">
         <label htmlFor="searchWeather">Another City</label>
         <input
           onChange={onChangeHandler}
@@ -71,8 +71,8 @@ const WeatherData = () => {
         </CurrentWeatherDetails>
       </WeatherDetails>
     </StyledWeatherData>
-  );
-};
+  )
+}
 
 const StyledWeatherData = styled(motion.div)`
   h2 {
@@ -142,7 +142,7 @@ const StyledWeatherData = styled(motion.div)`
     width: 100%;
     font-size: 1rem;
   }
-`;
+`
 
 const WeatherDetails = styled(motion.div)`
   height: 60%;
@@ -153,7 +153,7 @@ const WeatherDetails = styled(motion.div)`
     height: 60%;
     font-size: 1rem;
   }
-`;
+`
 
 const CurrentWeatherDetails = styled(motion.div)`
   font-size: 1.3rem;
@@ -186,6 +186,6 @@ const CurrentWeatherDetails = styled(motion.div)`
       }
     }
   }
-`;
+`
 
-export default WeatherData;
+export default WeatherData
