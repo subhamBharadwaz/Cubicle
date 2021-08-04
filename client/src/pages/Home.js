@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
+
+import News from '../components/news/News';
 // Import components
 import Weather from '../components/weather/Weather';
-import News from '../components/news/News';
 
 const Home = () => {
   //Chat bot Tawk
