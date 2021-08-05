@@ -21,6 +21,7 @@ const WeatherData = () => {
     setInput(e.target.value)
   }
   const searchHandler = (e) => {
+    e.preventDefault()
     dispatch(fetchWeather(input))
     setInput('')
   }
