@@ -14,7 +14,7 @@ const Home = () => {
         s0 = document.getElementsByTagName('script')[0]
       s1.async = true
       s1.src = 'https://embed.tawk.to/610a91c8649e0a0a5ccf8019/1fc8kiu2v'
-      s1.setAttribute('crossorigin', '*')
+      s1.setAttribute('Access-Control-Allow-Origin', '*')
       s0.parentNode.insertBefore(s1, s0)
     })()
     Tawk_API.onLoad = function () {
