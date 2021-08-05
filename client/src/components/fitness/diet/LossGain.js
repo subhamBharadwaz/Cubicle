@@ -5,7 +5,7 @@ export const LossGain = () => {
     <Main>
       <Gain>
         <h1>
-          Diet For <spans>Gaining</spans> Weight
+          Diet on on <spans>Gaining</spans> Weight
         </h1>
         <ol>
           <li>
