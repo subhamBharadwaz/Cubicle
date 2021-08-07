@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 // Style
 import styled from "styled-components";
 const Welcome = () => {
-  const logoSrc = "../img/LOGO white.svg";
+  // const logoSrc = "../img/LOGO white.svg";
+  // const logoSrc = "../img/LOGO white.svg";
   return (
     <WelcomeStyle className="landing-page">
       <div className="wrapper">

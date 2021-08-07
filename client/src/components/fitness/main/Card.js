@@ -19,6 +19,7 @@ const Card = () => {
   );
 };
 const Cards = styled.div`
+  margin-top: 25px;
   padding: 10px;
 
   display: flex;
@@ -48,11 +49,12 @@ const Container = styled.div`
   }
   img {
     width: 100%;
-    height: 50%;
+    height: 45%;
     border-radius: 5px 5px 0 0;
   }
   h3 {
     padding: 0.5rem;
+    font-size: 1.2rem;
     text-align: center;
     color: #fff;
     margin-bottom: 0.5rem;
@@ -63,10 +65,10 @@ const Container = styled.div`
     color: #c0c0c0;
   }
   h4 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: lightgreen;
     text-align: right;
-    padding: 1rem;
+    padding-top: 2rem;
   }
   @media (max-width: 48rem) {
     margin: 0.5rem;

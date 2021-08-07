@@ -82,6 +82,7 @@ const Nav = () => {
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
+  // const logoSrc = "/client/src/img/LOGOwhite.svg";
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
