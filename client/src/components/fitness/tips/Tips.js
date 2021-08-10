@@ -163,13 +163,15 @@ export const Tips = () => {
 const Main = styled.div`
   padding: 1rem;
   background-size: cover;
-  background-image: url(https://images.pexels.com/photos/4098232/pexels-photo-4098232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  /* background-image: url(https://images.pexels.com/photos/4098232/pexels-photo-4098232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); */
+  /* background-image: linear-gradient( 135deg, #81FFEF 10%, #F067B4 100%); */
+  background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);
 `;
 
 const Content = styled.div`
   margin: auto;
   padding: 3rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   color: white;
   border-radius: 40px;
 
@@ -187,6 +189,6 @@ const Content = styled.div`
   }
   transition: all 0.75s ease-in-out;
   &:hover {
-    background: rgba(0, 0, 0, 0.8);
+    /* background: rgba(0, 0, 0, 0.8); */
   }
 `;
