@@ -19,6 +19,11 @@ const News = () => {
 const NewsStyle = styled.div`
   height: 100%;
   width: 100%;
+
+  margin-left: 10rem;
+  position: relative;
+=======
+
 `;
 
 const Content = styled.div`

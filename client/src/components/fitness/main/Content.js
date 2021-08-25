@@ -23,8 +23,10 @@ export const Content = () => {
 const Main = styled.div`
   height: 100vh;
   width: 100vw;
-  background: url("https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=635&q=80")
-    no-repeat center center/cover;
+  /* background: url("https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=635&q=80")
+    no-repeat center center/cover; */
+    background-image: linear-gradient(black,white);
+
 `;
 const Fade = styled.div`
   position: relative;
@@ -39,7 +41,7 @@ const Head = styled.h3`
   position: relative;
   color: white;
   text-align: center;
-  font-size: 3.5rem;
+  font-size: 3rem;
   span {
     color: #ff3d3d;
   }
@@ -51,9 +53,9 @@ const Head2 = styled.h3`
   margin: auto;
   position: relative;
   max-width: 100%;
-  font-size: 36px;
+  font-size: 1.8rem;
   text-align: center;
-  margin-top: 15px;
+  margin-top: 25px;
   color: #e9e9e9;
   letter-spacing: 0.3rem;
   span {

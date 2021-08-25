@@ -17,7 +17,7 @@ export const cards = [
     id: 2,
   },
   {
-    title: "Pro Tips For Staying Healthy",
+    title: "Pro Tips For Staying Healthy!!",
     info: `Drink water, Eat nuts Avoid processed junk food (eat real food instead), Don't fear coffee, Eat fatty fish, Get enough sleep, Take care of your gut health with probiotics and fiber, Drink some water, especially before meals.`,
     image:
       "https://images.pexels.com/photos/7096/people-woman-coffee-meeting.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500",

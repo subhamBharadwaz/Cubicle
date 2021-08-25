@@ -12,8 +12,8 @@ export const Header = () => {
     <HeaderStyle>
       {isAuthenticated && (
         <>
-          <h2>Hello {Capitalize(user.data.name)},</h2>
-          <h3>Here's your spending dashboard!</h3>
+          <h3>Hello {Capitalize(user.data.name)},</h3>
+          <h3>Here's your spending <span>wallet!!</span></h3>
         </>
       )}
     </HeaderStyle>
@@ -24,8 +24,11 @@ const HeaderStyle = styled.div`
   margin-top: 5vh;
   color: #fff;
   font-size: 1.5rem;
-  h2 {
+  h3 {
     letter-spacing: 1px;
     margin: 0;
+    span{
+      color: #ffc917;
+    }
   }
 `;

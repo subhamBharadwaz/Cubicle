@@ -9,6 +9,7 @@ import styled from 'styled-components';
 const TodoContainer = () => {
   return (
     <Container>
+    
       <AddTodo />
       <TodoList />
     </Container>
@@ -17,10 +18,15 @@ const TodoContainer = () => {
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
+  padding: 50px 300px;
+  /* flex: 1; */
+  .add-todo{
+    
+  }
 `;
 
 export default TodoContainer;

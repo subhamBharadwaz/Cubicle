@@ -172,14 +172,15 @@ export const LossGain = () => {
 
 const Main = styled.div`
   background-size: cover;
-  background-image: url(https://images.pexels.com/photos/289368/pexels-photo-289368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  /* background-image: url(https://images.pexels.com/photos/289368/pexels-photo-289368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); */
+  background-image: linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%);
   padding: 1rem;
 `;
 const Gain = styled.div`
   margin: auto;
   width: 80%;
   padding: 3rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.8);
   color: white;
   border-radius: 40px;
   margin-bottom: 35px;
@@ -197,7 +198,7 @@ const Gain = styled.div`
   }
   transition: all 0.75s ease-in-out;
   &:hover {
-    background: rgba(0, 0, 0, 0.8);
+    /* background: rgba(0, 0, 0, 0.8); */
   }
   @media (max-width: 48rem) {
     width: 100%;
@@ -207,7 +208,7 @@ const Loss = styled.div`
   margin: auto;
   padding: 3rem;
   border-radius: 40px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.8);
   color: white;
   h1 {
     margin: 1rem;
@@ -223,6 +224,6 @@ const Loss = styled.div`
   }
   transition: all 0.75s ease-in-out;
   &:hover {
-    background: rgba(0, 0, 0, 0.8);
+    /* background: rgba(0, 0, 0, 0.8); */
   }
 `;
