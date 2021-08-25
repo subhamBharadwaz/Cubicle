@@ -1,3 +1,4 @@
+
 // import React, { useState } from 'react';
 // // Router
 
@@ -173,6 +174,8 @@
 
 // export default Nav;
 
+
+
 import React, { useState } from "react";
 // Router
 
@@ -265,6 +268,7 @@ const Nav = () => {
             <BiIcons.BiMenuAltLeft onClick={showSidebar} />
           </Link>
 
+
           <svg
             className="logo"
             version="1.1"
@@ -299,6 +303,11 @@ const Nav = () => {
 	c-2.8,1.71-5.62,3.39-8.45,5.04h217.71c75.49,0,141.44-24.66,197.86-73.97C2023.06,1622.12,2050.11,1561.73,2047.78,1490.27z"
             />
           </svg>
+
+          <div className="logo">
+            <h1>Cubicle</h1>
+          </div>
+
         </Navbar>
         <NavMenu className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul onClick={showSidebar} className="nav-menu-items">

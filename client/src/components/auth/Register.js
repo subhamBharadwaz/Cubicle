@@ -88,8 +88,14 @@ const Register = () => {
 };
 
 const FormStyle = styled.div`
+
 position: relative;
 min-height: 100vh;
+
+  position: relative;
+
+  min-height: 100vh;
+
   .login {
     overflow: hidden;
     background-color: white;

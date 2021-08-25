@@ -25,7 +25,11 @@ import { LossGain } from "./components/fitness/diet/LossGain";
 import { Tips } from "./components/fitness/tips/Tips";
 import { HomeWorkout } from "./components/fitness/workout/HomeWorkout";
 import { GymWorkout } from "./components/fitness/workout/GymWorkout";
+
 import Footer from './components/layout/footer/Footer'
+
+import Footer from "./components/layout/Footer";
+
 
 // Private Route
 import PrivateRoute from "./components/routing/PrivateRoute";
@@ -42,6 +46,7 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadUser());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -69,7 +74,11 @@ const App = () => {
 
         <Route path="" component={NotFound} />
       </Switch>
+
       <Footer/>
+
+      <Footer />
+
     </div>
   );
 };

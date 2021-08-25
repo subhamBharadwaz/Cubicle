@@ -16,7 +16,7 @@ const Todo = () => {
         <TodoContainer />
       </div>
 
-      <div className="background-animation">
+      {/* <div className="background-animation">
         <div id="Clouds">
           <div className="Cloud Foreground"></div>
           <div className="Cloud Background"></div>
@@ -54,7 +54,7 @@ const Todo = () => {
             />
           </defs>
         </svg>
-      </div>
+      </div> */}
     </TodoStyle>
   );
 };
