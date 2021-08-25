@@ -12,26 +12,17 @@ import { AddTransaction } from "../components/expense/AddTransaction";
 const Expense = () => {
   return (
     <ExpenseStyle>
-
-      <div className='main'>
-
-        <div className='container'>
-        <div className='content'>
-          <Header />
-
       <div className="main">
-        <Header />
-
         <div className="container">
-
-          <Balance />
-          <IncomeExpense />
-          <AddTransaction />
-        </div>
-        <div className='content'>
-          <TransactionList />
-        </div>
-          
+          <div className="content">
+            <Header />
+            <Balance />
+            <IncomeExpense />
+            <AddTransaction />
+          </div>
+          <div className="content">
+            <TransactionList />
+          </div>
         </div>
       </div>
     </ExpenseStyle>
@@ -63,7 +54,6 @@ const ExpenseStyle = styled.div`
     margin: 30px auto;
     flex: 1;
     padding: 50px 300px;
-    
   }
 `;
 
