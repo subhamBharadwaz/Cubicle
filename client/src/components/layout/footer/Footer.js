@@ -1,30 +1,23 @@
 import React from "react";
-import styled from "styled-components";
+import {IconContext} from "react-icons";
 import * as AiIcons from "react-icons/ai";
 import * as SiIcons from "react-icons/si";
-
-import { IconContext } from "react-icons";
+import styled from "styled-components";
 
 export const Footer = () => {
-  return (
-    <MainFooter>
-      <p>
-        Copyright &copy;2021 Cubicle. Designed by <span>SwissEncoders</span>
+  return (<MainFooter><p>Copyright & copy;
+          2021 Cubicle.Designed by<span>SwissEncoders</span>
       </p>
 
-      <Icons>
-        <IconContext.Provider value={{ color: "#fff", size: 30 }}>
-          <a href="https://www.instagram.com/swiss_encoders/?hl=en">
-            <AiIcons.AiOutlineInstagram />
-          </a>
+          <Icons><IconContext.Provider value = {{ color: "#fff", size: 30 }}>
+          <a href = "https://www.instagram.com/swiss_encoders/?hl=en">
+          <AiIcons.AiOutlineInstagram /></a>
           <SiIcons.SiGmail />
-          <a href="https://github.com/subhamBharadwaz/Cubicle">
-            <AiIcons.AiFillGithub />
-          </a>
+          <a href = "https://github.com/subhamBharadwaz/Cubicle">
+          <AiIcons.AiFillGithub /></a>
         </IconContext.Provider>
-      </Icons>
-    </MainFooter>
-  );
+          </Icons>
+    </MainFooter>);
 };
 const MainFooter = styled.div`
   display: flex;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 // Style
 import styled from "styled-components";
 const Welcome = () => {
@@ -19,21 +19,21 @@ const Welcome = () => {
                 Register
               </Link>
               <Link className="button login" to="/login">
-                Login
-              </Link>
-            </div>
-          </div>
+  Login</Link>
+            </div><
+      /div>
 
           
 
           <img
             className="curve"
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/626071/bottom-curve_copy.svg"
-            alt="svg"
-          />
-          <img
-            className="waves"
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/626071/waves_copy.svg"
+            src="https:/ /
+              s3 -
+          us - west - 2.amazonaws.com / s.cdpn.io / 626071 / bottom -
+          curve_copy.svg "
+  alt = "svg" / > < img
+  className = "waves"
+  src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/626071/waves_copy.svg"
             alt="svg"
           />
         </div>

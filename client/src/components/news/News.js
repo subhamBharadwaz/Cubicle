@@ -7,13 +7,8 @@ import styled from 'styled-components';
 import Headlines from './Headlines';
 
 const News = () => {
-  return (
-    <NewsStyle>
-      <Content>
-        <Headlines />
-      </Content>
-    </NewsStyle>
-  );
+  return (<NewsStyle><Content><Headlines /></Content>
+    </NewsStyle>);
 };
 
 const NewsStyle = styled.div`

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
-import { setAlert } from "../../actions/alertActions";
-import { register } from "../../actions/authActions";
+import React, {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {Link, Redirect} from "react-router-dom";
+import {setAlert} from "../../actions/alertActions";
+import {register} from "../../actions/authActions";
 
 // Style
 import styled from "styled-components";

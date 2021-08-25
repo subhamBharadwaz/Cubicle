@@ -103,8 +103,8 @@
 //             style={{ enableBackground: "new 0 0 2834.65 2834.65" }}
 //             xmlSpace="preserve"
 //           >
-//             {/* <style type='text/css'> .st0{{ fill: '#FFFFFF' }} </style> */}
-//             <path
+//             {/* <style type='text/css'> .st0{{ fill: '#FFFFFF' }} </style>
+//             */} <path
 //               className="st0"
 //               d="M1704,1500.21c-39.73,74.61-93.5,132.62-161.31,174.03c-67.81,41.41-144.82,62.85-230.99,64.34
 // 	c-122.16,1.5-226.89-42.16-314.19-131s-130.95-194.83-130.95-318.01c0-126.89,43.83-232.51,131.53-316.87
@@ -173,23 +173,24 @@
 
 // export default Nav;
 
-import React, { useState } from "react";
+import {motion} from "framer-motion";
+import React, {useState} from "react";
+// React icons
+import {IconContext} from "react-icons";
+import * as AiIcons from "react-icons/ai";
+import * as BiIcons from "react-icons/bi";
+import * as FaIcons from "react-icons/fa";
+import * as IoIcons from "react-icons/io5";
+import * as RiIcons from "react-icons/ri";
+import {useDispatch, useSelector} from "react-redux";
 // Router
 
-import { Link } from "react-router-dom";
-// React icons
-import { IconContext } from "react-icons";
-import * as BiIcons from "react-icons/bi";
-import * as AiIcons from "react-icons/ai";
-import * as RiIcons from "react-icons/ri";
-import * as IoIcons from "react-icons/io5";
-import * as FaIcons from "react-icons/fa";
-// Actions
-import { logout } from "../../actions/authActions";
-import { useDispatch, useSelector } from "react-redux";
+import {Link} from "react-router-dom";
 // Styles and Animations
 import styled from "styled-components";
-import { motion } from "framer-motion";
+
+// Actions
+import {logout} from "../../actions/authActions";
 
 const Nav = () => {
   const { isAuthenticated, loading } = useSelector((state) => state.auth);

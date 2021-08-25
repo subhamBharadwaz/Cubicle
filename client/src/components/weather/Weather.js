@@ -1,12 +1,13 @@
+import {motion} from 'framer-motion';
 import React from 'react';
+// Styles
+import styled from 'styled-components';
+
+import weatherBg from '../../img/weatherBg.jpg';
+
 // Components
 import Greeting from './Greeting';
 import WeatherData from './WeatherData';
-import weatherBg from '../../img/weatherBg.jpg';
-
-// Styles
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
 
 const Weather = () => {
   return (

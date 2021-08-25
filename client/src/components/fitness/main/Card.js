@@ -1,7 +1,9 @@
 import React from "react";
-import { cards } from "./cardData";
+import {Link} from "react-router-dom";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+
+import {cards} from "./cardData";
+
 const Card = () => {
   return (
     <Cards>

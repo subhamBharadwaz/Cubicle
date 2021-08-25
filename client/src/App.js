@@ -1,38 +1,36 @@
-import React, { useEffect } from "react";
-// Router
-import { Route, Switch } from "react-router-dom";
+import React, {useEffect} from "react";
 // redux
-import { useDispatch } from "react-redux";
+import {useDispatch} from "react-redux";
+// Router
+import {Route, Switch} from "react-router-dom";
 
-// Import Components and Pages
-import Nav from "./components/navbar/Nav";
+import {loadUser} from "./actions/authActions";
+import {LossGain} from "./components/fitness/diet/LossGain";
+// Components
+import {Content} from "./components/fitness/main/Content";
+import {Tips} from "./components/fitness/tips/Tips";
+import {GymWorkout} from "./components/fitness/workout/GymWorkout";
+import {HomeWorkout} from "./components/fitness/workout/HomeWorkout";
+import {Workout} from "./components/fitness/workout/Workout";
 import GlobalStyle from "./components/GlobalStyles";
 // Alert
 import Alert from "./components/layout/Alert";
-// Pages
-import Todo from "./pages/Todo";
+import Footer from './components/layout/footer/Footer'
+// Import Components and Pages
+import Nav from "./components/navbar/Nav";
+// Private Route
+import PrivateRoute from "./components/routing/PrivateRoute";
 import Expense from "./pages/Expense";
 import Fitness from "./pages/Fitness";
 import Home from "./pages/Home";
-import RegisterPage from "./pages/Register";
 import LoginPage from "./pages/Login";
-import Welcome from "./pages/Welcome";
 import NotFound from "./pages/NotFound";
-// Components
-import { Content } from "./components/fitness/main/Content";
-import { Workout } from "./components/fitness/workout/Workout";
-import { LossGain } from "./components/fitness/diet/LossGain";
-import { Tips } from "./components/fitness/tips/Tips";
-import { HomeWorkout } from "./components/fitness/workout/HomeWorkout";
-import { GymWorkout } from "./components/fitness/workout/GymWorkout";
-import Footer from './components/layout/footer/Footer'
-
-// Private Route
-import PrivateRoute from "./components/routing/PrivateRoute";
-
+import RegisterPage from "./pages/Register";
+// Pages
+import Todo from "./pages/Todo";
+import Welcome from "./pages/Welcome";
 // Actions
 import setAuthToken from "./utils/setAuthToken";
-import { loadUser } from "./actions/authActions";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-// Actions
-import { login } from "../../actions/authActions";
-
+import React, {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {Link, Redirect} from "react-router-dom";
 // Style
 import styled from "styled-components";
+
+// Actions
+import {login} from "../../actions/authActions";
 
 const Login = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
