@@ -6,6 +6,7 @@ import { getTransactions } from "../../actions/expenseAction";
 
 // Components
 import { Transaction } from "./Transaction";
+import Spinner from "../layout/Spinner";
 
 // Style
 import styled from "styled-components";
@@ -16,7 +17,7 @@ export const TransactionList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [expensePerPage, setExpensePerPage] = useState(5);
 
-  const { transactions } = useSelector((state) => state.expenses);
+  const { transactions, loading } = useSelector((state) => state.expenses);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTransactions());
@@ -55,15 +56,12 @@ export const TransactionList = () => {
     <TransactionListStyle>
       <h3>History</h3>
 
-      <ul className="list">
+      <ul>
         {currentExpense.map((transaction) => (
-          <Transaction
-            key={transaction._id}
-            className="lis"
-            transaction={transaction}
-          />
+          <Transaction key={transaction._id} transaction={transaction} />
         ))}
       </ul>
+      {loading && <Spinner />}
       <button onClick={prevExpenseHandler}>Prev</button>
       <button onClick={nextExpenseHandler}>Next</button>
     </TransactionListStyle>

@@ -201,6 +201,11 @@ ${"" /* Expense Style */}
   opacity: 1;
 }
 
+.loading{
+  margin: auto;
+  width: 30%;
+}
+
 `;
 
 export default GlobalStyle;

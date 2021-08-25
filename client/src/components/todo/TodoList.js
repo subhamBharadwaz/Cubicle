@@ -14,11 +14,11 @@ const TodoList = () => {
   const [todoPerPage, setTodoPerPage] = useState(5);
 
   const dispatch = useDispatch();
+  const { todos, loading } = useSelector((state) => state.todoList);
 
   useEffect(() => {
     dispatch(getTodos());
   }, [dispatch]);
-  const { todos } = useSelector((state) => state.todoList);
 
   // Get current todos
   const indexOfLastTodo = currentPage * todoPerPage;
@@ -49,6 +49,7 @@ const TodoList = () => {
   return (
     <TodoListStyle>
       <ul id="list" className="list">
+        {loading && <Spinner />}
         {currentTodos.map((todo) => (
           <Todo key={todo._id} todo={todo} />
         ))}
