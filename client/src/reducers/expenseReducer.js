@@ -6,20 +6,19 @@ const initState = {
 
 const expenseReducer = (state = initState, action) => {
   switch (action.type) {
-    case 'GET_TRANSACTIONS':
+    case "GET_TRANSACTIONS":
       return {
         ...state,
-
         transactions: action.payload,
         loading: false,
       };
-    case 'ADD_TRANSACTIONS':
+    case "ADD_TRANSACTIONS":
       return {
         ...state,
         transactions: [...state.transactions, action.payload],
       };
 
-    case 'DELETE_TRANSACTION':
+    case "DELETE_TRANSACTION":
       return {
         ...state,
         transactions: state.transactions.filter(
@@ -27,7 +26,7 @@ const expenseReducer = (state = initState, action) => {
         ),
       };
 
-    case 'TRANSACTION_ERROR':
+    case "TRANSACTION_ERROR":
       return {
         ...state,
 

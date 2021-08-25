@@ -1,24 +1,19 @@
 import React, { useEffect } from "react";
-// Moment for date/time
+
 import moment from "moment";
 
 import { useSelector, useDispatch } from "react-redux";
 // Actions
 import { fetchWeather } from "../../actions/weatherAction";
-// import {
-//   dateBuilder,
-//   ampm,
-//   hourValue,
-//   minuteValue,
-//   curTime,
-// } from '../../api/time';
+
+import Spinner from "../layout/Spinner";
 
 // Style and animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const Greeting = () => {
-  const { weatherInfo } = useSelector((state) => state.weather);
+  const { weatherInfo, loading } = useSelector((state) => state.weather);
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -41,30 +36,36 @@ const Greeting = () => {
 
         <h3>{moment().format("LT")}</h3>
       </GreetingData>
-      <CurrentWeather>
-        <h1>
-          <div className="temp">{weatherInfo.main.temp}</div>
-          <div className="degree">°c</div>
-        </h1>
-        <h2>
-          <div className="cityName">{weatherInfo.name}</div>
-          <div className="currentDate">{moment().format("MMM Do YY")}</div>
-        </h2>
-        <h3>
-          <div className="icon">
-            {weatherInfo.weather.map((data) => (
-              <img
-                key={data.id}
-                src={`http://openweathermap.org/img/w/${data.icon}.png`}
-                alt=""
-              />
-            ))}
-          </div>
-          <div className="weatherStatus">
-            {weatherInfo.weather.map((data) => data.description)}
-          </div>
-        </h3>
-      </CurrentWeather>
+      {loading ? (
+        <div className="loading">
+          <Spinner />
+        </div>
+      ) : (
+        <CurrentWeather>
+          <h1>
+            <div className="temp">{weatherInfo.main.temp}</div>
+            <div className="degree">°c</div>
+          </h1>
+          <h2>
+            <div className="cityName">{weatherInfo.name}</div>
+            <div className="currentDate">{moment().format("MMM Do YY")}</div>
+          </h2>
+          <h3>
+            <div className="icon">
+              {weatherInfo.weather.map((data) => (
+                <img
+                  key={data.id}
+                  src={`http://openweathermap.org/img/w/${data.icon}.png`}
+                  alt=""
+                />
+              ))}
+            </div>
+            <div className="weatherStatus">
+              {weatherInfo.weather.map((data) => data.description)}
+            </div>
+          </h3>
+        </CurrentWeather>
+      )}
     </WeatherGreeting>
   );
 };

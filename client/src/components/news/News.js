@@ -5,10 +5,18 @@ import styled from "styled-components";
 
 // Import components
 import Headlines from "./Headlines";
+import { useSelector } from "react-redux";
+import Spinner from "../layout/Spinner";
 
 const News = () => {
+  const { loading } = useSelector((state) => state.news);
   return (
     <NewsStyle>
+      {loading && (
+        <div className="loading">
+          <Spinner />
+        </div>
+      )}
       <Content>
         <Headlines />
       </Content>
@@ -22,8 +30,6 @@ const NewsStyle = styled.div`
 
   margin-left: 10rem;
   position: relative;
-=======
-
 `;
 
 const Content = styled.div`
