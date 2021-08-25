@@ -31,7 +31,7 @@ const Login = () => {
   }
 
   return (
-    <FormStyle className="container">
+    <FormStyle>
       <form className="login" onSubmit={onSubmitHandler}>
         <h1 className="large text-primary">Sign In</h1>
         <input
@@ -67,8 +67,9 @@ const Login = () => {
 };
 
 const FormStyle = styled.div`
-  .container {
-  }
+  position: relative;
+
+  min-height: 100vh;
 
   .login {
     overflow: hidden;

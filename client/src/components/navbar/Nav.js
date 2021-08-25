@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // Router
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 // React icons
-import { IconContext } from 'react-icons';
-import * as BiIcons from 'react-icons/bi';
-import * as AiIcons from 'react-icons/ai';
-import * as RiIcons from 'react-icons/ri';
-import * as IoIcons from 'react-icons/io5';
-import * as FaIcons from 'react-icons/fa';
+import { IconContext } from "react-icons";
+import * as BiIcons from "react-icons/bi";
+import * as AiIcons from "react-icons/ai";
+import * as RiIcons from "react-icons/ri";
+import * as IoIcons from "react-icons/io5";
+import * as FaIcons from "react-icons/fa";
 // Actions
-import { logout } from '../../actions/authActions';
-import { useDispatch, useSelector } from 'react-redux';
+import { logout } from "../../actions/authActions";
+import { useDispatch, useSelector } from "react-redux";
 // Styles and Animations
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Nav = () => {
   const { isAuthenticated, loading } = useSelector((state) => state.auth);
@@ -26,35 +26,35 @@ const Nav = () => {
 
   const authLinks = (
     <>
-      <li className='nav-text'>
-        <Link to='/home'>
+      <li className="nav-text">
+        <Link to="/home">
           <AiIcons.AiFillHome />
-          <span className='nav-span'> Home</span>
+          <span className="nav-span"> Home</span>
         </Link>
       </li>
-      <li className='nav-text'>
-        <Link to='/todo'>
+      <li className="nav-text">
+        <Link to="/todo">
           <RiIcons.RiCalendarTodoLine />
-          <span className='nav-span'> Todo List</span>
+          <span className="nav-span"> Todo List</span>
         </Link>
       </li>
-      <li className='nav-text'>
-        <Link to='/expense'>
+      <li className="nav-text">
+        <Link to="/expense">
           <FaIcons.FaMoneyCheckAlt />
-          <span className='nav-span'>Expense Tracker</span>
+          <span className="nav-span">Expense Tracker</span>
         </Link>
       </li>
-      <li className='nav-text'>
-        <Link to='/fitness'>
+      <li className="nav-text">
+        <Link to="/fitness">
           <IoIcons.IoFitnessOutline />
-          <span className='nav-span'>Fitness Zone</span>
+          <span className="nav-span">Fitness Zone</span>
         </Link>
       </li>
 
-      <li className='nav-text'>
-        <Link onClick={logoutHandler} to='/'>
+      <li className="nav-text">
+        <Link onClick={logoutHandler} to="/">
           <AiIcons.AiOutlineLogout />
-          <span className='nav-span'>Logout</span>
+          <span className="nav-span">Logout</span>
         </Link>
       </li>
     </>
@@ -62,16 +62,16 @@ const Nav = () => {
 
   const guestLinks = (
     <>
-      <li className='nav-text'>
-        <Link to='/register'>
+      <li className="nav-text">
+        <Link to="/register">
           <AiIcons.AiOutlineLogin />
-          <span className='nav-span'>Register</span>
+          <span className="nav-span">Register</span>
         </Link>
       </li>
-      <li className='nav-text'>
-        <Link to='/login'>
+      <li className="nav-text">
+        <Link to="/login">
           <AiIcons.AiOutlineLogin />
-          <span className='nav-span'>Login</span>
+          <span className="nav-span">Login</span>
         </Link>
       </li>
     </>
@@ -84,19 +84,19 @@ const Nav = () => {
   };
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
+      <IconContext.Provider value={{ color: "#fff" }}>
         <Navbar>
-          <Link to='#' className='menu-bars main'>
+          <Link to="#" className="menu-bars main">
             <BiIcons.BiMenuAltLeft onClick={showSidebar} />
           </Link>
-          <div className='logo'>
+          <div className="logo">
             <h1>Cubicle</h1>
           </div>
         </Navbar>
-        <NavMenu className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul onClick={showSidebar} className='nav-menu-items'>
-            <li className='navbar-toggle'>
-              <Link to='#' className='menu-bars'>
+        <NavMenu className={sidebar ? "nav-menu active" : "nav-menu"}>
+          <ul onClick={showSidebar} className="nav-menu-items">
+            <li className="navbar-toggle">
+              <Link to="#" className="menu-bars">
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>

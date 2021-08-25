@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 // Style
 import styled from "styled-components";
 const Welcome = () => {
-  const logoSrc = "../img/LOGO white.svg";
   return (
     <WelcomeStyle className="landing-page">
       <div className="wrapper">
@@ -79,12 +78,11 @@ const WelcomeStyle = styled.div`
   width: 100%;
   height: 100%;
   min-height: 100vh;
-
   font-weight: 400;
   .background {
     width: 100%;
     height: 100%;
-    min-height: 100vh;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -97,7 +95,7 @@ const WelcomeStyle = styled.div`
   .wrapper {
     width: 80%;
     height: 80%;
-    min-height: 800px;
+
     background: #fff;
     position: absolute;
     left: 50%;
