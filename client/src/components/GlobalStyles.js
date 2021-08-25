@@ -29,7 +29,7 @@ body{
 
 h1{
    font-family: 'Montserrat', sans-serif;
-   font-weight: 400; 
+   font-weight: 400;
 }
 
 ul{
@@ -49,10 +49,10 @@ ${"" /* Navbar */}
     justify-content: center;
     position: fixed;
     top: 0;
-    left: -100%;  
+    left: -100%;
     transition: 850ms
 
-   
+
   }
   .nav-menu.active{
     left: 0;
@@ -185,7 +185,7 @@ ${"" /* Expense Style */}
 }
 
 
- 
+
 .list li.plus {
   border-right: 5px solid #2ecc71;
 }
