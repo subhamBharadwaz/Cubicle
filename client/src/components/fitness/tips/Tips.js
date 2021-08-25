@@ -165,7 +165,7 @@ const Main = styled.div`
   background-size: cover;
   /* background-image: url(https://images.pexels.com/photos/4098232/pexels-photo-4098232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); */
   /* background-image: linear-gradient( 135deg, #81FFEF 10%, #F067B4 100%); */
-  background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%);
+  background-image: linear-gradient(135deg, #43cbff 10%, #9708cc 100%);
 `;
 
 const Content = styled.div`

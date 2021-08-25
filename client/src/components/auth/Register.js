@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {Link, Redirect} from "react-router-dom";
-import {setAlert} from "../../actions/alertActions";
-import {register} from "../../actions/authActions";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
+import { setAlert } from "../../actions/alertActions";
+import { register } from "../../actions/authActions";
 
 // Style
 import styled from "styled-components";
@@ -37,7 +37,7 @@ const Register = () => {
   }
 
   return (
-    <FormStyle >
+    <FormStyle>
       <form className="login" onSubmit={onSubmitHandler}>
         <h1 className="large text-primary">Sign Up</h1>
         <input
@@ -88,8 +88,8 @@ const Register = () => {
 };
 
 const FormStyle = styled.div`
-position: relative;
-min-height: 100vh;
+  position: relative;
+  min-height: 100vh;
   .login {
     overflow: hidden;
     background-color: white;

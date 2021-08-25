@@ -4,15 +4,20 @@ import styled from "styled-components";
 import Card from "./Card";
 
 export const Content = () => {
-  return (<Main><Fade><Head>THE ULTIMATE PERSONAL
-              FITNESS<span>TRAINING</span> PLANS
+  return (
+    <Main>
+      <Fade>
+        <Head>
+          THE ULTIMATE PERSONAL FITNESS<span>TRAINING</span> PLANS
         </Head>
 
-          <Head2>The<span>plans<
-              /span> that will help you to stay fit and healthy
+        <Head2>
+          The<span>plans</span> that will help you to stay fit and healthy
         </Head2>
-          <Card className = "card" /></Fade>
-    </Main>);
+        <Card className="card" />
+      </Fade>
+    </Main>
+  );
 };
 
 const Main = styled.div`
@@ -20,8 +25,7 @@ const Main = styled.div`
   width: 100vw;
   /* background: url("https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=635&q=80")
     no-repeat center center/cover; */
-    background-image: linear-gradient(black,white);
-
+  background-image: linear-gradient(black, white);
 `;
 const Fade = styled.div`
   position: relative;

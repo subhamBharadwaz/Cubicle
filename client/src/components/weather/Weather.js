@@ -1,13 +1,13 @@
-import {motion} from 'framer-motion';
-import React from 'react';
+import { motion } from "framer-motion";
+import React from "react";
 // Styles
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import weatherBg from '../../img/weatherBg.jpg';
+import weatherBg from "../../img/weatherBg.jpg";
 
 // Components
-import Greeting from './Greeting';
-import WeatherData from './WeatherData';
+import Greeting from "./Greeting";
+import WeatherData from "./WeatherData";
 
 const Weather = () => {
   return (

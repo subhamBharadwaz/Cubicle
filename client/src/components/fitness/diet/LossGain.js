@@ -173,7 +173,7 @@ export const LossGain = () => {
 const Main = styled.div`
   background-size: cover;
   /* background-image: url(https://images.pexels.com/photos/289368/pexels-photo-289368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); */
-  background-image: linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%);
+  background-image: linear-gradient(135deg, #ffa6b7 10%, #1e2ad2 100%);
   padding: 1rem;
 `;
 const Gain = styled.div`

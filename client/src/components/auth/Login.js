@@ -1,11 +1,11 @@
-import React, {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {Link, Redirect} from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
 // Style
 import styled from "styled-components";
 
 // Actions
-import {login} from "../../actions/authActions";
+import { login } from "../../actions/authActions";
 
 const Login = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
@@ -31,7 +31,7 @@ const Login = () => {
   }
 
   return (
-    <FormStyle >
+    <FormStyle>
       <form className="login" onSubmit={onSubmitHandler}>
         <h1 className="large text-primary">Sign In</h1>
         <input
@@ -67,9 +67,8 @@ const Login = () => {
 };
 
 const FormStyle = styled.div`
-position: relative;
-min-height: 100vh;
-   
+  position: relative;
+  min-height: 100vh;
 
   .login {
     overflow: hidden;

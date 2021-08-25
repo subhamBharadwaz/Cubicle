@@ -1,5 +1,5 @@
 import React from "react";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 // Style
 import styled from "styled-components";
 
@@ -13,7 +13,9 @@ export const Header = () => {
       {isAuthenticated && (
         <>
           <h3>Hello {Capitalize(user.data.name)},</h3>
-          <h3>Here's your spending <span>wallet!!</span></h3>
+          <h3>
+            Here's your spending <span>wallet!!</span>
+          </h3>
         </>
       )}
     </HeaderStyle>
@@ -27,7 +29,7 @@ const HeaderStyle = styled.div`
   h3 {
     letter-spacing: 1px;
     margin: 0;
-    span{
+    span {
       color: #ffc917;
     }
   }

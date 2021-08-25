@@ -1,26 +1,32 @@
-import React from 'react';
+import React from "react";
 // Style
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import {AddTransaction} from '../components/expense/AddTransaction';
-import {Balance} from '../components/expense/Balance';
+import { AddTransaction } from "../components/expense/AddTransaction";
+import { Balance } from "../components/expense/Balance";
 // Import components
-import {Header} from '../components/expense/Header';
-import {IncomeExpense} from '../components/expense/IncomeExpense';
-import {TransactionList} from '../components/expense/TransactionList';
+import { Header } from "../components/expense/Header";
+import { IncomeExpense } from "../components/expense/IncomeExpense";
+import { TransactionList } from "../components/expense/TransactionList";
 
 const Expense = () => {
-  return (<ExpenseStyle><div className = 'main'>
-
-          <div className = 'container'><div className = 'content'><Header />
-          <Balance /><IncomeExpense /><AddTransaction />
+  return (
+    <ExpenseStyle>
+      <div className="main">
+        <div className="container">
+          <div className="content">
+            <Header />
+            <Balance />
+            <IncomeExpense />
+            <AddTransaction />
           </div>
-        <div className='content'>
-          <TransactionList />
+          <div className="content">
+            <TransactionList />
           </div>
-          
-        </div></div>
-    </ExpenseStyle>);
+        </div>
+      </div>
+    </ExpenseStyle>
+  );
 };
 
 const ExpenseStyle = styled.div`
@@ -48,7 +54,6 @@ const ExpenseStyle = styled.div`
     margin: 30px auto;
     flex: 1;
     padding: 50px 300px;
-    
   }
 `;
 

@@ -1,21 +1,21 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 // redux
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 // Router
-import {Route, Switch} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
-import {loadUser} from "./actions/authActions";
-import {LossGain} from "./components/fitness/diet/LossGain";
+import { loadUser } from "./actions/authActions";
+import { LossGain } from "./components/fitness/diet/LossGain";
 // Components
-import {Content} from "./components/fitness/main/Content";
-import {Tips} from "./components/fitness/tips/Tips";
-import {GymWorkout} from "./components/fitness/workout/GymWorkout";
-import {HomeWorkout} from "./components/fitness/workout/HomeWorkout";
-import {Workout} from "./components/fitness/workout/Workout";
+import { Content } from "./components/fitness/main/Content";
+import { Tips } from "./components/fitness/tips/Tips";
+import { GymWorkout } from "./components/fitness/workout/GymWorkout";
+import { HomeWorkout } from "./components/fitness/workout/HomeWorkout";
+import { Workout } from "./components/fitness/workout/Workout";
 import GlobalStyle from "./components/GlobalStyles";
 // Alert
 import Alert from "./components/layout/Alert";
-import Footer from './components/layout/footer/Footer'
+import Footer from "./components/layout/footer/Footer";
 // Import Components and Pages
 import Nav from "./components/navbar/Nav";
 // Private Route
@@ -67,7 +67,7 @@ const App = () => {
 
         <Route path="" component={NotFound} />
       </Switch>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
