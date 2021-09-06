@@ -1,8 +1,8 @@
-const TodoSchema = require('../models/Todo');
-const ErrorResponse = require('../utils/errorResponse');
-const asyncHandler = require('../middleware/async');
-const Todo = require('../models/Todo');
-const auth = require('../middleware/auth');
+const TodoSchema = require("../models/Todo");
+const ErrorResponse = require("../utils/errorResponse");
+const asyncHandler = require("../middleware/async");
+const Todo = require("../models/Todo");
+
 // @desc    Get all todos
 // @route   GET /api/v1/todos/me
 // @access  Private
@@ -10,7 +10,53 @@ const auth = require('../middleware/auth');
 exports.getAllTodos = asyncHandler(async (req, res, next) => {
   const todos = await TodoSchema.find({
     user: req.user.id,
-  }).populate('user', ['name']);
+  }).populate("user", ["name"]);
+
+  if (!todos) {
+    return next(
+      new ErrorResponse(`Todo not found with id ${req.user.id}`, 400)
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    count: todos.length,
+    data: todos,
+  });
+});
+
+// @desc    Get all completed todos
+// @route   GET /api/v1/todos/me/completed
+// @access  Private
+
+exports.getAllCompletedTodos = asyncHandler(async (req, res, next) => {
+  const todos = await TodoSchema.find({
+    user: req.user.id,
+    completed: true,
+  }).populate("user", ["name"]);
+
+  if (!todos) {
+    return next(
+      new ErrorResponse(`Todo not found with id ${req.user.id}`, 400)
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    count: todos.length,
+    data: todos,
+  });
+});
+
+// @desc    Get all completed todos
+// @route   GET /api/v1/todos/me/uncompleted
+// @access  Private
+
+exports.getAllUncompletedTodos = asyncHandler(async (req, res, next) => {
+  const todos = await TodoSchema.find({
+    user: req.user.id,
+    completed: null,
+  }).populate("user", ["name"]);
 
   if (!todos) {
     return next(

@@ -1,14 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const TodoSchema = new mongoose.Schema({
   text: {
     type: String,
     trim: true,
-    required: [true, 'Please add some text'],
+    required: [true, "Please add some text"],
   },
   user: {
     type: mongoose.Schema.ObjectId,
-    ref: 'User',
+    ref: "User",
     required: true,
   },
 
@@ -16,6 +16,7 @@ const TodoSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
+  completed: Boolean,
 });
 
-module.exports = mongoose.model('Todos', TodoSchema);
+module.exports = mongoose.model("Todos", TodoSchema);
