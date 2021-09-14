@@ -68,12 +68,20 @@ const TodoList = () => {
 };
 
 const TodoListStyle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 2rem;
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto;
+    gap: 25px 25px;
+    line-height: 1.5;
+    min-height: 100%;
+  }
   .btns {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
   .btn-1 {
     margin: 15px;
@@ -90,7 +98,6 @@ const TodoListStyle = styled.div`
     justify-content: space-between;
   }
   @media (max-width: 48rem) {
-    flex-direction: column;
     .btns {
       flex-direction: row;
       margin-bottom: 10px;

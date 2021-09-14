@@ -17,17 +17,13 @@ const TodoContainer = () => {
 };
 
 const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-  padding: 50px 300px;
-  /* flex: 1; */
-  .add-todo {
-  }
+  width: 85%;
+  max-width: 1140px;
+  margin: 0 auto;
+  height: 100%;
+
   @media (max-width: 48rem) {
-    flex-direction: column;
+    width: 100%;
   }
 `;
 

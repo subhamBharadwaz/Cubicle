@@ -51,7 +51,8 @@ const TodoContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 350px;
+  flex-wrap: wrap;
+
   button {
     border: none;
     background: none;
@@ -81,7 +82,9 @@ const TodoStyle = styled.div`
   );
   padding: 16px;
   border-radius: 5px;
-  width: 100%;
+  width: 20%;
+  height: 80%;
+
   word-wrap: break-word;
   margin: 1.5rem;
   flex: 2;

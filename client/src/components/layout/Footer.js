@@ -22,7 +22,7 @@ const MainFooter = styled.div`
   min-height: 10vh;
   padding: 2em 5em;
   flex-wrap: wrap;
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;

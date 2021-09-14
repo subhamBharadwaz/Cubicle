@@ -54,7 +54,8 @@ const FormStyle = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5%;
+  padding: 5%;
+  width: 100%;
 
   button {
     padding: 12px 16px;
@@ -81,7 +82,7 @@ const InputStyle = styled.input`
   border: 2px solid #5d0cff;
   color: #333;
   outline: none;
-  width: 320px;
+  width: 90%;
   font-size: 1.5rem;
   background: transparent;
   ::placeholder {

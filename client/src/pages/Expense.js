@@ -66,17 +66,15 @@ import { AddTransaction } from "../components/expense/AddTransaction";
 const Expense = () => {
   return (
     <ExpenseStyle>
-      <div className="main">
-        <div className="container">
-          <div className="content">
-            <Header />
-            <Balance />
-            <IncomeExpense />
-            <AddTransaction />
-          </div>
-          <div className="content">
-            <TransactionList />
-          </div>
+      <div className="container">
+        <div className="content">
+          <Header />
+          <Balance />
+          <IncomeExpense />
+          <AddTransaction />
+        </div>
+        <div className="content">
+          <TransactionList />
         </div>
       </div>
     </ExpenseStyle>
@@ -91,42 +89,37 @@ const ExpenseStyle = styled.div`
     rgba(76, 158, 255, 1) 89%
   );
   padding-bottom: 10rem;
-  .main {
-    display: flex;
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    min-height: 100vh;
-    margin: 0;
-  }
 
   .container {
+    min-height: 100vh;
+    margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 30px auto;
+
     flex: 1;
+    width: 80%;
+    max-width: 1140px;
+    margin: 0 auto;
 
-    padding: 50px 400px;
-
-    padding: 50px 300px;
+    .content {
+      padding-left: 2em;
+    }
+    @media (max-width: 48rem) {
+      width: 100%;
+    }
   }
   @media (max-width: 48rem) {
-    max-width: 48rem;
-    .main {
+    .container {
       display: flex;
-      width: 250px;
+
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       margin: 0;
-      padding-left: 350px;
-    }
-    .container {
+
       flex-direction: column;
-      margin: 1px;
-      width: 10px;
     }
   }
 `;

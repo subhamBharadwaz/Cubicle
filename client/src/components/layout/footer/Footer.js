@@ -34,7 +34,7 @@ const MainFooter = styled.div`
   background-color: black;
   min-height: 10vh;
   padding-top: 1.5rem;
-  position: absolute;
+
   left: 0;
   bottom: 0;
   width: 100%;
