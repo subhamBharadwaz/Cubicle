@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 // Components
-import Greeting from './Greeting';
-import WeatherData from './WeatherData';
-import weatherBg from '../../img/weatherBg.jpg';
+import Greeting from "./Greeting";
+import WeatherData from "./WeatherData";
+import weatherBg from "../../img/weatherBg.jpg";
 
 // Styles
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Weather = () => {
   return (
@@ -23,7 +23,7 @@ const StyledWeather = styled(motion.div)`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 48rem) {
+  @media (max-width: 75rem) {
     flex-direction: column;
   }
 `;

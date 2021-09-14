@@ -144,8 +144,7 @@ const StyledWeatherData = styled(motion.div)`
       font-size: 1.5rem;
     }
   }
-  @media (max-width: 48rem) {
-    height: 50%;
+  @media (max-width: 75rem) {
     width: 100%;
     font-size: 1rem;
   }
