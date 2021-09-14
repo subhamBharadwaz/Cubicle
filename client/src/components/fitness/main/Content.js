@@ -4,20 +4,15 @@ import styled from "styled-components";
 import Card from "./Card";
 
 export const Content = () => {
-  return (
-    <Main>
-      <Fade>
-        <Head>
-          THE ULTIMATE PERSONAL FITNESS <span>TRAINING</span> PLANS
+  return (<Main><Fade><Head>THE ULTIMATE PERSONAL
+              FITNESS<span>TRAINING</span> PLANS
         </Head>
 
-        <Head2>
-          The <span>plans</span> that will help you to stay fit and healthy
+          <Head2>The<span>plans<
+              /span> that will help you to stay fit and healthy
         </Head2>
-        <Card className="card" />
-      </Fade>
-    </Main>
-  );
+          <Card className = "card" /></Fade>
+    </Main>);
 };
 
 const Main = styled.div`

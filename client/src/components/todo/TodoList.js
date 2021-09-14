@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-// Components
-import Todo from "./Todo";
-import Spinner from "../layout/Spinner";
-// Actions
-import { getTodos } from "../../actions/todoAction";
-
+import React, {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 // Style
 import styled from "styled-components";
+
+// Actions
+import {getTodos} from "../../actions/todoAction";
+import Spinner from "../layout/Spinner";
+
+// Components
+import Todo from "./Todo";
 
 const TodoList = () => {
   const [currentPage, setCurrentPage] = useState(1);

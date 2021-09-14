@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import { useDispatch } from "react-redux";
-// Actions
-import { addTodo } from "../../actions/todoAction";
-
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
 //  icons
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import React, {useState} from "react";
+import {useDispatch} from "react-redux";
 // Style
 import styled from "styled-components";
+import {v4 as uuidv4} from "uuid";
 
-//filter
+// Actions
+import {addTodo} from "../../actions/todoAction";
+
+// filter
 import TodoFilter from "./TodoFilter";
 
 const AddTodo = () => {

@@ -1,12 +1,12 @@
 import React from "react";
-
+import {useSelector} from "react-redux";
 // Import styled
 import styled from "styled-components";
 
+import Spinner from "../layout/Spinner";
+
 // Import components
 import Headlines from "./Headlines";
-import { useSelector } from "react-redux";
-import Spinner from "../layout/Spinner";
 
 const News = () => {
   const { loading } = useSelector((state) => state.news);

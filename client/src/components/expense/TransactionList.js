@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
-
-import { useSelector, useDispatch } from "react-redux";
-// Actions
-import { getTransactions } from "../../actions/expenseAction";
-
-// Components
-import { Transaction } from "./Transaction";
-import Spinner from "../layout/Spinner";
-
+import React, {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 // Style
 import styled from "styled-components";
+
+// Actions
+import {getTransactions} from "../../actions/expenseAction";
+import Spinner from "../layout/Spinner";
+
+// Components
+import {Transaction} from "./Transaction";
 
 //  icons
 
@@ -17,19 +16,15 @@ export const TransactionList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [expensePerPage, setExpensePerPage] = useState(5);
 
-  const { transactions, loading } = useSelector((state) => state.expenses);
+  const {transactions, loading} = useSelector((state) => state.expenses);
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getTransactions());
-  }, [dispatch]);
+  useEffect(() => { dispatch(getTransactions()); }, [ dispatch ]);
 
   // Get current expenses
   const indexOfLastExpense = currentPage * expensePerPage;
   const indexOfFirstExpense = indexOfLastExpense - expensePerPage;
-  const currentExpense = transactions.slice(
-    indexOfFirstExpense,
-    indexOfLastExpense
-  );
+  const currentExpense =
+      transactions.slice(indexOfFirstExpense, indexOfLastExpense);
 
   // Next Expense
   const nextExpenseHandler = () => {
@@ -59,16 +54,16 @@ export const TransactionList = () => {
       <ul>
         {currentExpense.map((transaction) => (
           <Transaction key={transaction._id} transaction={transaction} />
-        ))}
-      </ul>
-      {loading && <Spinner />}
-      <button className="btn-2" onClick={prevExpenseHandler}>
-        Prev
-      </button>
+        ))
+}</ul>
+      {loading && <Spinner />
+}
+<button className = "btn-2" onClick = {prevExpenseHandler}>Prev<
+    /button>
       <button className="btn-2" onClick={nextExpenseHandler}>
         Next
-      </button>
-    </TransactionListStyle>
+      </button><
+    /TransactionListStyle>
   );
 };
 

@@ -56,31 +56,24 @@ import React from "react";
 // Style
 import styled from "styled-components";
 
+import {AddTransaction} from "../components/expense/AddTransaction";
+import {Balance} from "../components/expense/Balance";
 // Import components
-import { Header } from "../components/expense/Header";
-import { Balance } from "../components/expense/Balance";
-import { IncomeExpense } from "../components/expense/IncomeExpense";
-import { TransactionList } from "../components/expense/TransactionList";
-import { AddTransaction } from "../components/expense/AddTransaction";
+import {Header} from "../components/expense/Header";
+import {IncomeExpense} from "../components/expense/IncomeExpense";
+import {TransactionList} from "../components/expense/TransactionList";
 
 const Expense = () => {
   return (
-    <ExpenseStyle>
-      <div className="main">
-        <div className="container">
-          <div className="content">
-            <Header />
-            <Balance />
-            <IncomeExpense />
-            <AddTransaction />
-          </div>
+      <ExpenseStyle><div className = "main"><div className = "container">
+      <div className = "content"><Header /><Balance /><IncomeExpense />
+      <AddTransaction />
+      </div>
           <div className="content">
             <TransactionList />
-          </div>
-        </div>
       </div>
-    </ExpenseStyle>
-  );
+        </div></div>
+    </ExpenseStyle>);
 };
 
 const ExpenseStyle = styled.div`

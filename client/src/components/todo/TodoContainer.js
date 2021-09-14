@@ -1,11 +1,12 @@
 import React from "react";
-// Components
-import AddTodo from "./AddTodo";
-import TodoList from "./TodoList";
 // import TodoFilter from "./TodoFilter";
 
 // Style
 import styled from "styled-components";
+
+// Components
+import AddTodo from "./AddTodo";
+import TodoList from "./TodoList";
 
 const TodoContainer = () => {
   return (

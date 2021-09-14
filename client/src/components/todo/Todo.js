@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-// Actions
-import { deleteTodo, completedTodo } from "../../actions/todoAction";
-
+import {faCheck, faEdit, faTrash} from "@fortawesome/free-solid-svg-icons";
+//  icons
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import React, {useState} from "react";
+import {useDispatch} from "react-redux";
+import {Link} from "react-router-dom";
 // styles
 import styled from "styled-components";
 
-//  icons
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faEdit, faCheck } from "@fortawesome/free-solid-svg-icons";
+// Actions
+import {completedTodo, deleteTodo} from "../../actions/todoAction";
 
-const Todo = ({ todo }) => {
+const Todo = ({todo}) => {
   const dispatch = useDispatch();
   const deleteHandler = (e) => {
     dispatch(deleteTodo(todo._id));
