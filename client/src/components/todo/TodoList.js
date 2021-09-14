@@ -54,9 +54,15 @@ const TodoList = () => {
           <Todo key={todo._id} todo={todo} />
         ))}
       </ul>
-      <button onClick={prevTodosHandler}>Prev</button>
+      <div className="btns">
+        <button className="btn-1" onClick={prevTodosHandler}>
+          Prev
+        </button>
 
-      <button onClick={nextTodosHandler}>Next</button>
+        <button className="btn-1" onClick={nextTodosHandler}>
+          Next
+        </button>
+      </div>
     </TodoListStyle>
   );
 };
@@ -65,6 +71,31 @@ const TodoListStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  .btns {
+    display: flex;
+    flex-direction: row;
+  }
+  .btn-1 {
+    margin: 15px;
+    padding: 0.6rem 1.8rem;
+
+    background: linear-gradient(90deg, #88108a, #6711e7);
+
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    justify-content: space-between;
+  }
+  @media (max-width: 48rem) {
+    flex-direction: column;
+    .btns {
+      flex-direction: row;
+      margin-bottom: 10px;
+    }
+  }
 `;
 
 export default TodoList;

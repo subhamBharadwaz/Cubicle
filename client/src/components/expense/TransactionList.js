@@ -62,8 +62,12 @@ export const TransactionList = () => {
         ))}
       </ul>
       {loading && <Spinner />}
-      <button onClick={prevExpenseHandler}>Prev</button>
-      <button onClick={nextExpenseHandler}>Next</button>
+      <button className="btn-2" onClick={prevExpenseHandler}>
+        Prev
+      </button>
+      <button className="btn-2" onClick={nextExpenseHandler}>
+        Next
+      </button>
     </TransactionListStyle>
   );
 };
@@ -77,5 +81,19 @@ const TransactionListStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+  }
+  .btn-2 {
+    margin: 15px;
+    padding: 0.6rem 1.8rem;
+
+    background: linear-gradient(90deg, #88108a, #6711e7);
+
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    justify-content: space-between;
   }
 `;

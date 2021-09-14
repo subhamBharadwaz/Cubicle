@@ -1,21 +1,20 @@
-
-// import React, { useState } from 'react';
+// import React, { useState } from "react";
 // // Router
 
-// import { Link } from 'react-router-dom';
+// import { Link } from "react-router-dom";
 // // React icons
-// import { IconContext } from 'react-icons';
-// import * as BiIcons from 'react-icons/bi';
-// import * as AiIcons from 'react-icons/ai';
-// import * as RiIcons from 'react-icons/ri';
-// import * as IoIcons from 'react-icons/io5';
-// import * as FaIcons from 'react-icons/fa';
+// import { IconContext } from "react-icons";
+// import * as BiIcons from "react-icons/bi";
+// import * as AiIcons from "react-icons/ai";
+// import * as RiIcons from "react-icons/ri";
+// import * as IoIcons from "react-icons/io5";
+// import * as FaIcons from "react-icons/fa";
 // // Actions
-// import { logout } from '../../actions/authActions';
-// import { useDispatch, useSelector } from 'react-redux';
+// import { logout } from "../../actions/authActions";
+// import { useDispatch, useSelector } from "react-redux";
 // // Styles and Animations
-// import styled from 'styled-components';
-// import { motion } from 'framer-motion';
+// import styled from "styled-components";
+// import { motion } from "framer-motion";
 
 // const Nav = () => {
 //   const { isAuthenticated, loading } = useSelector((state) => state.auth);
@@ -27,35 +26,35 @@
 
 //   const authLinks = (
 //     <>
-//       <li className='nav-text'>
-//         <Link to='/home'>
+//       <li className="nav-text">
+//         <Link to="/home">
 //           <AiIcons.AiFillHome />
-//           <span className='nav-span'> Home</span>
+//           <span className="nav-span"> Home</span>
 //         </Link>
 //       </li>
-//       <li className='nav-text'>
-//         <Link to='/todo'>
+//       <li className="nav-text">
+//         <Link to="/todo">
 //           <RiIcons.RiCalendarTodoLine />
-//           <span className='nav-span'> Todo List</span>
+//           <span className="nav-span"> Todo List</span>
 //         </Link>
 //       </li>
-//       <li className='nav-text'>
-//         <Link to='/expense'>
+//       <li className="nav-text">
+//         <Link to="/expense">
 //           <FaIcons.FaMoneyCheckAlt />
-//           <span className='nav-span'>Expense Tracker</span>
+//           <span className="nav-span">Expense Tracker</span>
 //         </Link>
 //       </li>
-//       <li className='nav-text'>
-//         <Link to='/fitness'>
+//       <li className="nav-text">
+//         <Link to="/fitness">
 //           <IoIcons.IoFitnessOutline />
-//           <span className='nav-span'>Fitness Zone</span>
+//           <span className="nav-span">Fitness Zone</span>
 //         </Link>
 //       </li>
 
-//       <li className='nav-text'>
-//         <Link onClick={logoutHandler} to='/'>
+//       <li className="nav-text">
+//         <Link onClick={logoutHandler} to="/">
 //           <AiIcons.AiOutlineLogout />
-//           <span className='nav-span'>Logout</span>
+//           <span className="nav-span">Logout</span>
 //         </Link>
 //       </li>
 //     </>
@@ -63,16 +62,16 @@
 
 //   const guestLinks = (
 //     <>
-//       <li className='nav-text'>
-//         <Link to='/register'>
+//       <li className="nav-text">
+//         <Link to="/register">
 //           <AiIcons.AiOutlineLogin />
-//           <span className='nav-span'>Register</span>
+//           <span className="nav-span">Register</span>
 //         </Link>
 //       </li>
-//       <li className='nav-text'>
-//         <Link to='/login'>
+//       <li className="nav-text">
+//         <Link to="/login">
 //           <AiIcons.AiOutlineLogin />
-//           <span className='nav-span'>Login</span>
+//           <span className="nav-span">Login</span>
 //         </Link>
 //       </li>
 //     </>
@@ -83,15 +82,14 @@
 //   const showSidebar = () => {
 //     setSidebar(!sidebar);
 //   };
-//   // const logoSrc = "/client/src/img/LOGOwhite.svg";
 //   return (
 //     <>
-//       <IconContext.Provider value={{ color: '#fff' }}>
+//       <IconContext.Provider value={{ color: "#fff" }}>
 //         <Navbar>
-//           <Link to='#' className='menu-bars main'>
+//           <Link to="#" className="menu-bars main">
 //             <BiIcons.BiMenuAltLeft onClick={showSidebar} />
 //           </Link>
-//           <div className='logo'>
+
 //           <svg
 //             className="logo"
 //             version="1.1"
@@ -126,12 +124,15 @@
 // 	c-2.8,1.71-5.62,3.39-8.45,5.04h217.71c75.49,0,141.44-24.66,197.86-73.97C2023.06,1622.12,2050.11,1561.73,2047.78,1490.27z"
 //             />
 //           </svg>
+
+//           <div className="logo">
+//             <h1>Cubicle</h1>
 //           </div>
 //         </Navbar>
-//         <NavMenu className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-//           <ul onClick={showSidebar} className='nav-menu-items'>
-//             <li className='navbar-toggle'>
-//               <Link to='#' className='menu-bars'>
+//         <NavMenu className={sidebar ? "nav-menu active" : "nav-menu"}>
+//           <ul onClick={showSidebar} className="nav-menu-items">
+//             <li className="navbar-toggle">
+//               <Link to="#" className="menu-bars">
 //                 <AiIcons.AiOutlineClose />
 //               </Link>
 //             </li>
@@ -146,7 +147,7 @@
 // const Navbar = styled(motion.div)`
 //   background-color: #121212;
 //   color: #fff;
-//   min-height: 8vh;
+//   max-height: 8vh;
 //   display: flex;
 //   justify-content: space-between;
 //   align-items: center;
@@ -159,9 +160,10 @@
 //   .logo {
 //     margin-right: 45%;
 //     height: 7rem;
-//   }
-//   .st0{
-//     fill: #fff;
+
+//     .st0 {
+//       fill: #ffff;
+//     }
 //   }
 // `;
 
@@ -173,8 +175,6 @@
 // `;
 
 // export default Nav;
-
-
 
 import React, { useState } from "react";
 // Router
@@ -268,7 +268,6 @@ const Nav = () => {
             <BiIcons.BiMenuAltLeft onClick={showSidebar} />
           </Link>
 
-
           <svg
             className="logo"
             version="1.1"
@@ -303,11 +302,6 @@ const Nav = () => {
 	c-2.8,1.71-5.62,3.39-8.45,5.04h217.71c75.49,0,141.44-24.66,197.86-73.97C2023.06,1622.12,2050.11,1561.73,2047.78,1490.27z"
             />
           </svg>
-
-          <div className="logo">
-            <h1>Cubicle</h1>
-          </div>
-
         </Navbar>
         <NavMenu className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul onClick={showSidebar} className="nav-menu-items">

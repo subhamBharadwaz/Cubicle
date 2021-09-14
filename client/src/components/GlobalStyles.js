@@ -206,6 +206,19 @@ ${"" /* Expense Style */}
   width: 30%;
 }
 
+/* select */
+.select
+{
+    position: relative;
+    height: 16px;
+    padding: 15px 14px;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
 `;
 
 export default GlobalStyle;

@@ -35,6 +35,8 @@ import PrivateRoute from "./components/routing/PrivateRoute";
 import setAuthToken from "./utils/setAuthToken";
 import { loadUser } from "./actions/authActions";
 
+//Footer
+
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
@@ -71,8 +73,6 @@ const App = () => {
 
         <Route path="" component={NotFound} />
       </Switch>
-
-      <Footer />
 
       <Footer />
     </div>

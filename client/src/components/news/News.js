@@ -24,12 +24,19 @@ const News = () => {
   );
 };
 
+
+
 const NewsStyle = styled.div`
   height: 100%;
   width: 100%;
 
   margin-left: 10rem;
   position: relative;
+
+  @media (max-width: 48rem) {
+    margin-left: 0.9rem;
+    height: 180vh;
+  }
 `;
 
 const Content = styled.div`
@@ -38,5 +45,4 @@ const Content = styled.div`
     padding: 7% 4%;
   }
 `;
-
 export default News;

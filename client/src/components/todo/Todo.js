@@ -1,33 +1,46 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 // Actions
-import { deleteTodo } from '../../actions/todoAction';
+import { deleteTodo, completedTodo } from "../../actions/todoAction";
 
 // styles
-import styled from 'styled-components';
+import styled from "styled-components";
 
 //  icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faEdit, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const Todo = ({ todo }) => {
   const dispatch = useDispatch();
   const deleteHandler = (e) => {
     dispatch(deleteTodo(todo._id));
   };
+  const [toogle, setToogle] = useState(todo.completed);
+  const completeds = () => {
+    toogle ? setToogle(false) : setToogle(true);
+  };
   return (
     <TodoContainer>
       <TodoStyle>
-        <li>{todo.text}</li>
+        <div
+          style={{
+            textDecorationLine: toogle ? "line-through" : "none",
+          }}
+        >
+          <li>{todo.text}</li>
+          <button className="btn completed" onClick={completeds}>
+            <FontAwesomeIcon icon={faCheck} className="icon completed" />
+          </button>
+        </div>
       </TodoStyle>
 
-      <button className='btn delete-todo-btn' onClick={deleteHandler}>
-        <FontAwesomeIcon icon={faTrash} className='icon todo-delete-icon' />
+      <button className="btn delete-todo-btn" onClick={deleteHandler}>
+        <FontAwesomeIcon icon={faTrash} className="icon todo-delete-icon" />
       </button>
-      <Link to='/edit-todo'>
-        <button className='btn update-todo-btn'>
-          <FontAwesomeIcon icon={faEdit} className='icon todo-update-icon' />
+      <Link to="/edit-todo">
+        <button className="btn update-todo-btn">
+          <FontAwesomeIcon icon={faEdit} className="icon todo-update-icon" />
         </button>
       </Link>
     </TodoContainer>

@@ -170,11 +170,72 @@ export const LossGain = () => {
   );
 };
 
+// const Main = styled.div`
+//   background-size: cover;
+//   /* background-image: url(https://images.pexels.com/photos/289368/pexels-photo-289368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); */
+//   background-image: linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%);
+//   padding: 1rem;
+// `;
+// const Gain = styled.div`
+//   margin: auto;
+//   width: 80%;
+//   padding: 3rem;
+//   background: rgba(0, 0, 0, 0.8);
+//   color: white;
+//   border-radius: 40px;
+//   margin-bottom: 35px;
+//   h1 {
+//     margin: 1rem;
+//   }
+//   spans {
+//     color: #ff3d3d;
+//   }
+//   h3 {
+//     margin: 0.5rem;
+//   }
+//   p {
+//     padding: 2px;
+//   }
+//   transition: all 0.75s ease-in-out;
+//   &:hover {
+//     /* background: rgba(0, 0, 0, 0.8); */
+//   }
+//   @media (max-width: 48rem) {
+//     width: 100%;
+//   }
+// `;
+// const Loss = styled.div`
+//   margin: auto;
+//   padding: 3rem;
+//   border-radius: 40px;
+//   background: rgba(0, 0, 0, 0.8);
+//   color: white;
+//   h1 {
+//     margin: 1rem;
+//   }
+//   h3 {
+//     margin: 0.5rem;
+//   }
+//   spans {
+//     color: #ff3d3d;
+//   }
+//   p {
+//     padding: 2px;
+//   }
+//   transition: all 0.75s ease-in-out;
+//   &:hover {
+//     /* background: rgba(0, 0, 0, 0.8); */
+//   }
+// `;
+
 const Main = styled.div`
   background-size: cover;
-  /* background-image: url(https://images.pexels.com/photos/289368/pexels-photo-289368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); */
-  background-image: linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%);
+
+  background-image: linear-gradient(135deg, #ffa6b7 10%, #1e2ad2 100%);
   padding: 1rem;
+  @media (max-width: 48rem) {
+    height: 350vh;
+  }
 `;
 const Gain = styled.div`
   margin: auto;
@@ -198,7 +259,6 @@ const Gain = styled.div`
   }
   transition: all 0.75s ease-in-out;
   &:hover {
-    /* background: rgba(0, 0, 0, 0.8); */
   }
   @media (max-width: 48rem) {
     width: 100%;
@@ -207,6 +267,7 @@ const Gain = styled.div`
 const Loss = styled.div`
   margin: auto;
   padding: 3rem;
+  margin-bottom: 9rem;
   border-radius: 40px;
   background: rgba(0, 0, 0, 0.8);
   color: white;
@@ -223,7 +284,4 @@ const Loss = styled.div`
     padding: 2px;
   }
   transition: all 0.75s ease-in-out;
-  &:hover {
-    /* background: rgba(0, 0, 0, 0.8); */
-  }
 `;

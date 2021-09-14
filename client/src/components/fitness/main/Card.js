@@ -71,9 +71,11 @@ const Container = styled.div`
     padding-top: 2rem;
   }
   @media (max-width: 48rem) {
-    margin: 0.5rem;
-    padding: 2rem;
+    margin: 0.3rem;
+    margin-bottom: 6.5rem;
+    padding: 3rem;
     background: rgb(0, 0, 0);
+
     p {
       font-size: 1.2rem;
     }

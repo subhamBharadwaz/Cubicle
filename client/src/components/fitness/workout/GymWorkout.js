@@ -293,12 +293,65 @@ export const GymWorkout = () => {
     </Main>
   );
 };
+// const Main = styled.div`
+//   /* background: url("https://images.unsplash.com/photo-1605296867724-fa87a8ef53fd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80")
+//     no-repeat center center/cover; */
+//     background-color: #A9C9FF;
+// background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+// padding: 10px;;
+// `;
+// const Head = styled.h1`
+//   padding-top: 25px;
+//   padding-bottom: 25px;
+//   margin-bottom: 10px;
+//   font-size: 55px;
+//   text-align: center;
+//   color: #ffffff;
+//   span {
+//     color: #ff3d3d;
+//   }
+//   @media (max-width: 48rem) {
+//     font-size: 10vw;
+//   }
+// `;
+
+// const Div1 = styled.div`
+//   font-size: 18px;
+
+//   margin: auto;
+//   width: 70%;
+//   border: none;
+//   border-radius: 10px;
+//   padding: 15px 25px;
+//   background: rgba(0, 0, 0, 0.7);
+//   color: white;
+//   margin-bottom: 25px;
+//   p{
+//     text-align: center;
+//   }
+//   h3 {
+//     font-size: 32px;
+//     text-align: center;
+//     color: #ff3d3d;
+//   }
+//   h5 {
+//     font-size: 27px;
+//     text-align: center;
+//     color: #ff3d3d;
+//   }
+//   transition: all 0.75s ease-in-out;
+//   &:hover {
+//     /* background: rgba(66, 66, 66, 0.7); */
+//   }
+//   @media (max-width: 48rem) {
+//     width: 90%;
+//   }
+// `;
+
 const Main = styled.div`
-  /* background: url("https://images.unsplash.com/photo-1605296867724-fa87a8ef53fd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80")
-    no-repeat center center/cover; */
-    background-color: #A9C9FF;
-background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
-padding: 10px;;
+  background-color: #a9c9ff;
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+  padding: 10px; ;
 `;
 const Head = styled.h1`
   padding-top: 25px;
@@ -319,14 +372,15 @@ const Div1 = styled.div`
   font-size: 18px;
 
   margin: auto;
+
   width: 70%;
   border: none;
   border-radius: 10px;
   padding: 15px 25px;
   background: rgba(0, 0, 0, 0.7);
   color: white;
-  margin-bottom: 25px;
-  p{
+  margin-bottom: 6rem;
+  p {
     text-align: center;
   }
   h3 {
@@ -341,7 +395,6 @@ const Div1 = styled.div`
   }
   transition: all 0.75s ease-in-out;
   &:hover {
-    /* background: rgba(66, 66, 66, 0.7); */
   }
   @media (max-width: 48rem) {
     width: 90%;

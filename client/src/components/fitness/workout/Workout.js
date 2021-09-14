@@ -37,6 +37,7 @@ const Cards = styled.div`
 
   @media (max-width: 48rem) {
     flex-direction: column;
+    height: 100%;
   }
 `;
 const Container = styled.div`
@@ -76,8 +77,8 @@ const Container = styled.div`
     color: #c0c0c0;
   }
   @media (max-width: 48rem) {
-    width: 25rem;
-    margin: 1rem 2rem 0rem;
+    width: 35rem;
+    margin: 1rem 2rem 6rem;
     background: rgb(0, 0, 0);
     img {
       height: 50%;

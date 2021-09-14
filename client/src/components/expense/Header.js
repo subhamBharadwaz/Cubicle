@@ -13,7 +13,9 @@ export const Header = () => {
       {isAuthenticated && (
         <>
           <h3>Hello {Capitalize(user.data.name)},</h3>
-          <h3>Here's your spending <span>wallet!!</span></h3>
+          <h3>
+            Here's your spending <span>wallet!!</span>
+          </h3>
         </>
       )}
     </HeaderStyle>
@@ -27,8 +29,11 @@ const HeaderStyle = styled.div`
   h3 {
     letter-spacing: 1px;
     margin: 0;
-    span{
+    span {
       color: #ffc917;
     }
+  }
+  @media (max-width: 48rem) {
+    width: 350px;
   }
 `;
