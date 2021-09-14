@@ -11,6 +11,9 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 // Style
 import styled from "styled-components";
 
+//filter
+import TodoFilter from "./TodoFilter";
+
 const AddTodo = () => {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
@@ -30,6 +33,7 @@ const AddTodo = () => {
   return (
     <>
       <FormStyle>
+        <TodoFilter />
         <div className="form-control">
           <InputStyle
             onChange={(e) => setText(e.target.value)}
@@ -40,7 +44,7 @@ const AddTodo = () => {
         </div>
         <button onClick={submitHandler} className="btn add-todo-btn">
           <FontAwesomeIcon icon={faPlus} className="icon add-icon" />
-        </button>
+        </button>{" "}
       </FormStyle>
     </>
   );
@@ -51,6 +55,7 @@ const FormStyle = styled.form`
   justify-content: center;
   align-items: center;
   margin-top: 5%;
+
   button {
     padding: 12px 16px;
     border: none;

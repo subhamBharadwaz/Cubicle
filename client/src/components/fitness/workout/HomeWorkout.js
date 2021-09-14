@@ -253,15 +253,10 @@ export const HomeWorkout = () => {
 };
 
 const Main = styled.div`
-  /* background: url("https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80")
-    no-repeat center center/cover; */
-    /* background: linear-gradient(90deg, #a51bfb 0%, #891cff 100%); */
-    background-color: #A9C9FF;
-background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+  background-color: #a9c9ff;
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
 
-
-
-    padding: 10px;
+  padding: 10px;
 `;
 
 const Head = styled.h1`
@@ -288,17 +283,13 @@ const Div1 = styled.div`
   padding: 15px 20px;
   background: rgba(0, 0, 0, 0.7);
   color: white;
-  margin-bottom: 25px;
+  margin-bottom: 6rem;
   h3 {
     font-size: 32px;
     text-align: center;
     color: #ff3d3d;
   }
   transition: all 0.75s ease-in-out;
-  &:hover {
-    /* background: rgba(0, 0, 0, 0.2);
-    color: #171717; */
-  }
 
   @media (max-width: 48rem) {
     width: 90%;

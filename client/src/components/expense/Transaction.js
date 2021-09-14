@@ -70,4 +70,7 @@ const ListStyle = styled.li`
   width: 100%;
   margin-right: 1rem;
   margin-top: 1rem;
+  @media (max-width: 48rem) {
+    width: 250px;
+  }
 `;

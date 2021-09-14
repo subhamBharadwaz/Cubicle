@@ -25,8 +25,10 @@ const Main = styled.div`
   width: 100vw;
   /* background: url("https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=635&q=80")
     no-repeat center center/cover; */
-    background-image: linear-gradient(black,white);
-
+  background-image: linear-gradient(black, white);
+  @media (max-width: 48rem) {
+    height: 100%;
+  }
 `;
 const Fade = styled.div`
   position: relative;
@@ -46,7 +48,7 @@ const Head = styled.h3`
     color: #ff3d3d;
   }
   @media (max-width: 48rem) {
-    font-size: 10vw;
+    font-size: 5vw;
   }
 `;
 const Head2 = styled.h3`
@@ -62,6 +64,6 @@ const Head2 = styled.h3`
     color: #ff3d3d;
   }
   @media (max-width: 48rem) {
-    font-size: 7vw;
+    font-size: 3vw;
   }
 `;
