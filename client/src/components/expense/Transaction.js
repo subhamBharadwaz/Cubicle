@@ -1,38 +1,40 @@
-import {faEdit, faTrash} from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 // icons
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 // Style
 import styled from "styled-components";
 
 // Actions
-import {deleteTransaction} from "../../actions/expenseAction";
+import { deleteTransaction } from "../../actions/expenseAction";
 // Utils
-import {numberWithCommas} from "../../utils/format";
+import { numberWithCommas } from "../../utils/format";
 
-export const Transaction = ({transaction}) => {
+export const Transaction = ({ transaction }) => {
   const dispatch = useDispatch();
-  const deleteHandler =
-      (e) => { dispatch(deleteTransaction(transaction._id)); };
+  const deleteHandler = (e) => {
+    dispatch(deleteTransaction(transaction._id));
+  };
 
   const sign = transaction.amount < 0 ? "-" : "+";
 
   return (
-      <TransactionStyle>
-      <ListStyle className = {transaction.amount < 0 ? "minus" : "plus"}>{
-          transaction.text}<span>{sign} ₹{
-          numberWithCommas(
-              Math.abs(transaction.amount))}</span>
+    <TransactionStyle>
+      <ListStyle className={transaction.amount < 0 ? "minus" : "plus"}>
+        {transaction.text}
+        <span>
+          {sign} ₹{numberWithCommas(Math.abs(transaction.amount))}
+        </span>
       </ListStyle>
-      <button onClick = {deleteHandler} className = "expense-delete-btn">
-      <FontAwesomeIcon icon = {faTrash} className =
-           "icon expense-delete-icon" />
+      <button onClick={deleteHandler} className="expense-delete-btn">
+        <FontAwesomeIcon icon={faTrash} className="icon expense-delete-icon" />
       </button>
       <button className="btn update-expense-btn">
         <FontAwesomeIcon icon={faEdit} className="icon expense-update-icon" />
       </button>
-    </TransactionStyle>);
+    </TransactionStyle>
+  );
 };
 
 const TransactionStyle = styled.div`

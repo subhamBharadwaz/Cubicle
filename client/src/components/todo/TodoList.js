@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 // Style
 import styled from "styled-components";
 
 // Actions
-import {getTodos} from "../../actions/todoAction";
+import { getTodos } from "../../actions/todoAction";
 import Spinner from "../layout/Spinner";
 
 // Components

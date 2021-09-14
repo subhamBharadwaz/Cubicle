@@ -1,11 +1,11 @@
-import {motion} from "framer-motion";
-import React, {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import { motion } from "framer-motion";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 // Styling and animations
 import styled from "styled-components";
 
 // Actions
-import {fetchTopHeadings} from "../../actions/newsAction";
+import { fetchTopHeadings } from "../../actions/newsAction";
 
 const Headlines = () => {
   const { topHeadlines } = useSelector((state) => state.news);

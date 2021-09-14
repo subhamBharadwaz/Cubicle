@@ -176,24 +176,24 @@
 
 // export default Nav;
 
-import {motion} from "framer-motion";
-import React, {useState} from "react";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
 // React icons
-import {IconContext} from "react-icons";
+import { IconContext } from "react-icons";
 import * as AiIcons from "react-icons/ai";
 import * as BiIcons from "react-icons/bi";
 import * as FaIcons from "react-icons/fa";
 import * as IoIcons from "react-icons/io5";
 import * as RiIcons from "react-icons/ri";
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // Router
 
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 // Styles and Animations
 import styled from "styled-components";
 
 // Actions
-import {logout} from "../../actions/authActions";
+import { logout } from "../../actions/authActions";
 
 const Nav = () => {
   const { isAuthenticated, loading } = useSelector((state) => state.auth);

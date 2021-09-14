@@ -1,5 +1,5 @@
 import React from "react";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 // Import styled
 import styled from "styled-components";
 
@@ -23,8 +23,6 @@ const News = () => {
     </NewsStyle>
   );
 };
-
-
 
 const NewsStyle = styled.div`
   height: 100%;
