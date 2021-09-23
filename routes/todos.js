@@ -3,6 +3,7 @@ const {
   getAllTodos,
   getAllCompletedTodos,
   getAllUncompletedTodos,
+  toggleTodos,
   createTodo,
   updateTodo,
   deleteTodo,
@@ -15,5 +16,6 @@ router.route("/me/completed").get(protect, getAllCompletedTodos);
 router.route("/me/uncompleted").get(protect, getAllUncompletedTodos);
 router.route("/").post(protect, createTodo);
 router.route("/:id").put(protect, updateTodo).delete(protect, deleteTodo);
+router.route("/:id/iscompleted").put(protect, toggleTodos);
 
 module.exports = router;

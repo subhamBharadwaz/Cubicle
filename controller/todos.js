@@ -71,6 +71,36 @@ exports.getAllUncompletedTodos = asyncHandler(async (req, res, next) => {
   });
 });
 
+// @desc    Toggle todos
+// @route   GET /api/v1/todos/:id/iscompleted
+// @access  Private
+
+exports.toggleTodos = asyncHandler(async (req, res, next) => {
+  let todo = await TodoSchema.findById(req.params.id);
+  if (!todo) {
+    return next(
+      new ErrorResponse(`Todo not found with id ${req.params.id}`, 400)
+    );
+  }
+
+  let completed = null;
+  // Make sure user is todo owner
+  if (todo.user.toString() !== req.user.id) {
+    return next(
+      new ErrorResponse(
+        `User ${req.user.id} is not authorized to update this todo`,
+        404
+      )
+    );
+  }
+
+  todo = await Todo.findOneAndUpdate(req.params.id, req.body, {
+    completed: !completed,
+    runValidators: true,
+  });
+  res.status(200).json({ success: true, data: todo });
+});
+
 // @desc    Create single todo
 // @route   POST /api/v1/todos
 // @access  Private
