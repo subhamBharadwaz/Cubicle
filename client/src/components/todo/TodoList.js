@@ -9,16 +9,16 @@ import { getTodos } from "../../actions/todoAction";
 // Style
 import styled from "styled-components";
 
-const TodoList = () => {
+const TodoList = ({ updateHandler, setToggleSubmit, updateTodoHandler }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [todoPerPage, setTodoPerPage] = useState(5);
+  const [todoPerPage, setTodoPerPage] = useState(6);
 
   const dispatch = useDispatch();
   const { todos, loading } = useSelector((state) => state.todoList);
 
   useEffect(() => {
     dispatch(getTodos());
-  }, [dispatch]);
+  }, [dispatch, updateTodoHandler]);
 
   // Get current todos
   const indexOfLastTodo = currentPage * todoPerPage;
@@ -51,18 +51,25 @@ const TodoList = () => {
       <ul id="list" className="list">
         {loading && <Spinner />}
         {currentTodos.map((todo) => (
-          <Todo key={todo._id} todo={todo} />
+          <Todo
+            key={todo._id}
+            todo={todo}
+            updateHandler={updateHandler}
+            setToggleSubmit={setToggleSubmit}
+          />
         ))}
       </ul>
-      <div className="btns">
-        <button className="btn-1" onClick={prevTodosHandler}>
-          Prev
-        </button>
+      {currentTodos.length > 0 && (
+        <div className="btns">
+          <button className="btn-1" onClick={prevTodosHandler}>
+            Prev
+          </button>
 
-        <button className="btn-1" onClick={nextTodosHandler}>
-          Next
-        </button>
-      </div>
+          <button className="btn-1" onClick={nextTodosHandler}>
+            Next
+          </button>
+        </div>
+      )}
     </TodoListStyle>
   );
 };

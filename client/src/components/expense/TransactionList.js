@@ -13,7 +13,12 @@ import styled from "styled-components";
 
 //  icons
 
-export const TransactionList = () => {
+export const TransactionList = ({
+  updateHandler,
+  toggleSubmit,
+  setToggleSubmit,
+  updateExpenseHandler,
+}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [expensePerPage, setExpensePerPage] = useState(5);
 
@@ -21,7 +26,7 @@ export const TransactionList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTransactions());
-  }, [dispatch]);
+  }, [dispatch, updateExpenseHandler]);
 
   // Get current expenses
   const indexOfLastExpense = currentPage * expensePerPage;
@@ -58,16 +63,28 @@ export const TransactionList = () => {
 
       <ul>
         {currentExpense.map((transaction) => (
-          <Transaction key={transaction._id} transaction={transaction} />
+          <Transaction
+            key={transaction._id}
+            transaction={transaction}
+            updateHandler={updateHandler}
+            toggleSubmit={toggleSubmit}
+            setToggleSubmit={setToggleSubmit}
+          />
         ))}
       </ul>
       {loading && <Spinner />}
-      <button className="btn-2" onClick={prevExpenseHandler}>
-        Prev
-      </button>
-      <button className="btn-2" onClick={nextExpenseHandler}>
-        Next
-      </button>
+      {currentExpense.length > 0 ? (
+        <>
+          <button className="btn-2" onClick={prevExpenseHandler}>
+            Prev
+          </button>
+          <button className="btn-2" onClick={nextExpenseHandler}>
+            Next
+          </button>
+        </>
+      ) : (
+        <h3>You don't have any Expenses added!</h3>
+      )}
     </TransactionListStyle>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 // Actions
-import { deleteTodo, completedTodo } from "../../actions/todoAction";
+import { deleteTodo, addCompleteTodo } from "../../actions/todoAction";
 
 // styles
 import styled from "styled-components";
@@ -11,26 +11,29 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEdit, faCheck } from "@fortawesome/free-solid-svg-icons";
 
-const Todo = ({ todo }) => {
+const Todo = ({ todo, updateHandler, setToggleSubmit }) => {
   const dispatch = useDispatch();
   const deleteHandler = (e) => {
     dispatch(deleteTodo(todo._id));
   };
-  const [toogle, setToogle] = useState(todo.completed);
-  const completeds = () => {
-    toogle ? setToogle(false) : setToogle(true);
+  const [toggle, setToggle] = useState(todo.completed);
+
+  const newToggle = toggle === null ? setToggle(true) : toggle;
+
+  const completeTodoHandler = ({ updateHandler, setToggleSubmit }) => {
+    dispatch(addCompleteTodo(todo._id, newToggle));
   };
   return (
     <TodoContainer>
       <TodoStyle>
-        <div
-          style={{
-            textDecorationLine: toogle ? "line-through" : "none",
-          }}
-        >
+        <div>
           <li>{todo.text}</li>
-          <button className="btn completed" onClick={completeds}>
-            <FontAwesomeIcon icon={faCheck} className="icon completed" />
+          <button className="btn completed">
+            <FontAwesomeIcon
+              icon={faCheck}
+              className="icon completed"
+              onClick={completeTodoHandler}
+            />
           </button>
         </div>
       </TodoStyle>
@@ -40,7 +43,15 @@ const Todo = ({ todo }) => {
       </button>
       <Link to="/edit-todo">
         <button className="btn update-todo-btn">
-          <FontAwesomeIcon icon={faEdit} className="icon todo-update-icon" />
+          <FontAwesomeIcon
+            onClick={(e) => {
+              e.preventDefault();
+              updateHandler(todo._id);
+              setToggleSubmit(true);
+            }}
+            icon={faEdit}
+            className="icon todo-update-icon"
+          />
         </button>
       </Link>
     </TodoContainer>

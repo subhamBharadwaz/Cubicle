@@ -2,7 +2,6 @@ const initState = {
   todos: [],
   loading: true,
   error: {},
-  completed: Boolean,
 };
 
 const todoReducer = (state = initState, action) => {
@@ -13,10 +12,37 @@ const todoReducer = (state = initState, action) => {
         todos: action.payload,
         loading: false,
       };
+    case "GET_COMPLETED_TODOS":
+      return {
+        ...state,
+        todos: action.payload,
+        loading: false,
+      };
+    case "GET_UNCOMPLETED_TODOS":
+      return {
+        ...state,
+        todos: action.payload,
+        loading: false,
+      };
     case "ADD_TODO":
       return {
         ...state,
         todos: [...state.todos, action.payload],
+      };
+    case "ADD_COMPLETE":
+      return {
+        ...state,
+        todos: state.todos.find((todo) => {
+          return todo._id === action.payload;
+        }),
+      };
+
+    case "UPDATE_TODO":
+      return {
+        ...state,
+        todos: state.todos.map((t) =>
+          t._id === action.payload.id ? action.payload : t
+        ),
       };
 
     case "DELETE_TODO":

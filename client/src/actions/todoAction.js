@@ -16,6 +16,38 @@ export const getTodos = () => async (dispatch) => {
   }
 };
 
+// Get the current user's completed todos
+export const getCompletedTodos = () => async (dispatch) => {
+  try {
+    const res = await axios.get("/api/v1/todos/me/completed");
+    dispatch({
+      type: "GET_COMPLETED_TODOS",
+      payload: res.data.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: "TODO_ERROR",
+      payload: err.response.data.error,
+    });
+  }
+};
+
+// Get the current user's completed todos
+export const getUncompletedTodos = () => async (dispatch) => {
+  try {
+    const res = await axios.get("/api/v1/todos/me/uncompleted");
+    dispatch({
+      type: "GET_UNCOMPLETED_TODOS",
+      payload: res.data.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: "TODO_ERROR",
+      payload: err.response.data.error,
+    });
+  }
+};
+
 // Add Todo
 
 export const addTodo = (todo) => async (dispatch) => {
@@ -29,6 +61,29 @@ export const addTodo = (todo) => async (dispatch) => {
     dispatch({
       type: "ADD_TODO",
       payload: res.data.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: "TODO_ERROR",
+      payload: err.response.data.error,
+    });
+  }
+};
+
+// Add Complete
+
+export const addCompleteTodo = (id, todo) => async (dispatch) => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  try {
+    await axios.put(`/api/v1/todos/${id}/iscompleted`, todo, config);
+
+    dispatch({
+      type: "ADD_COMPLETE",
+      payload: id,
     });
   } catch (err) {
     dispatch({
@@ -55,12 +110,18 @@ export const deleteTodo = (id) => async (dispatch) => {
   }
 };
 
-export const completedTodo = (id) => async (dispatch) => {
+// Update Todo
+export const updateTodo = (id, todo) => async (dispatch) => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
   try {
-    await axios.get("/api/v1/todos/me/completed");
+    const res = await axios.put(`/api/v1/todos/${id}`, todo, config);
     dispatch({
-      type: "TOOGLE_TODO",
-      payload: id,
+      type: "UPDATE_TODO",
+      payload: res.data.data,
     });
   } catch (err) {
     dispatch({

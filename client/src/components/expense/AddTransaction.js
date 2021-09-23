@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
+import React from "react";
+import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 // Actions
-import { addTransaction } from '../../actions/expenseAction';
+import { addTransaction } from "../../actions/expenseAction";
 
 // Style
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const AddTransaction = () => {
-  const [text, setText] = useState('');
-  const [amount, setAmount] = useState(0);
-
+export const AddTransaction = ({
+  text,
+  setText,
+  amount,
+  setAmount,
+  toggleSubmit,
+  updateExpenseHandler,
+}) => {
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
@@ -24,35 +28,38 @@ export const AddTransaction = () => {
 
     dispatch(addTransaction(newTransaction));
 
-    setText('');
+    setText("");
     setAmount(0);
   };
+
   return (
     <AddTransactionStyle>
       <h3>Add new transaction</h3>
-      <form onSubmit={submitHandler}>
-        <div className='form-control'>
-          <label htmlFor='text'>Text</label>
+      <form onSubmit={toggleSubmit ? updateExpenseHandler : submitHandler}>
+        <div className="form-control">
+          <label htmlFor="text">Text</label>
           <input
-            type='text'
+            type="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder='Enter text...'
+            placeholder="Enter text..."
           />
         </div>
-        <div className='form-control'>
-          <label htmlFor='amount'>
+        <div className="form-control">
+          <label htmlFor="amount">
             Amount <br />
             (negative - expense, positive - income)
           </label>
           <input
-            type='number'
+            type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            placeholder='Enter amount...'
+            placeholder="Enter amount..."
           />
         </div>
-        <button className='btn'>Add transaction</button>
+        <button className="btn">
+          {toggleSubmit ? "Update Transaction" : "Add Transaction"}
+        </button>
       </form>
     </AddTransactionStyle>
   );
@@ -99,8 +106,8 @@ const AddTransactionStyle = styled.div`
     margin: 10px 0;
   }
 
-  input[type='text'],
-  input[type='number'] {
+  input[type="text"],
+  input[type="number"] {
     border: 1px solid #dedede;
     border-radius: 2px;
     display: block;

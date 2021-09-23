@@ -18,6 +18,14 @@ const expenseReducer = (state = initState, action) => {
         transactions: [...state.transactions, action.payload],
       };
 
+    case "UPDATE_TRANSACTIONS":
+      return {
+        ...state,
+        transactions: state.transactions.map((t) =>
+          t._id === action.payload.id ? action.payload : t
+        ),
+      };
+
     case "DELETE_TRANSACTION":
       return {
         ...state,

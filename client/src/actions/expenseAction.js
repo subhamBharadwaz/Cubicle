@@ -53,3 +53,24 @@ export const deleteTransaction = (id) => async (dispatch) => {
     });
   }
 };
+
+// Update Expense
+export const updateTransaction = (id, transaction) => async (dispatch) => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  try {
+    const res = await axios.put(`/api/v1/expenses/${id}`, transaction, config);
+    dispatch({
+      type: "UPDATE_TRANSACTIONS",
+      payload: res.data.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: "TRANSACTION_ERROR",
+      payload: err.response.data.error,
+    });
+  }
+};

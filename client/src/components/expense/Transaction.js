@@ -10,9 +10,13 @@ import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 
-export const Transaction = ({ transaction }) => {
+export const Transaction = ({
+  transaction,
+  updateHandler,
+  setToggleSubmit,
+}) => {
   const dispatch = useDispatch();
-  const deleteHandler = (e) => {
+  const deleteHandler = () => {
     dispatch(deleteTransaction(transaction._id));
   };
 
@@ -29,7 +33,13 @@ export const Transaction = ({ transaction }) => {
       <button onClick={deleteHandler} className="expense-delete-btn">
         <FontAwesomeIcon icon={faTrash} className="icon expense-delete-icon" />
       </button>
-      <button className="btn update-expense-btn">
+      <button
+        onClick={() => {
+          updateHandler(transaction._id);
+          setToggleSubmit(true);
+        }}
+        className="btn update-expense-btn"
+      >
         <FontAwesomeIcon icon={faEdit} className="icon expense-update-icon" />
       </button>
     </TransactionStyle>

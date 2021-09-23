@@ -1,58 +1,4 @@
-// import React from 'react';
-// // Style
-// import styled from 'styled-components';
-
-// // Import components
-// import { Header } from '../components/expense/Header';
-// import { Balance } from '../components/expense/Balance';
-// import { IncomeExpense } from '../components/expense/IncomeExpense';
-// import { TransactionList } from '../components/expense/TransactionList';
-// import { AddTransaction } from '../components/expense/AddTransaction';
-
-// const Expense = () => {
-//   return (
-//     <ExpenseStyle>
-//       <div className='main'>
-//         <Header />
-
-//         <div className='container'>
-//           <Balance />
-//           <IncomeExpense />
-
-//           <TransactionList />
-
-//           <AddTransaction />
-//         </div>
-//       </div>
-//     </ExpenseStyle>
-//   );
-// };
-
-// const ExpenseStyle = styled.div`
-//   background: rgb(59, 62, 227);
-//   background: linear-gradient(
-//     21deg,
-//     rgba(59, 62, 227, 1) 2%,
-//     rgba(76, 158, 255, 1) 89%
-//   );
-//   .main {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     min-height: 100vh;
-//     margin: 0;
-//   }
-
-//   .container {
-//     margin: 30px auto;
-//     width: 350px;
-//   }
-// `;
-
-// export default Expense;
-
-import React from "react";
+import React, { useState } from "react";
 // Style
 import styled from "styled-components";
 
@@ -63,7 +9,41 @@ import { IncomeExpense } from "../components/expense/IncomeExpense";
 import { TransactionList } from "../components/expense/TransactionList";
 import { AddTransaction } from "../components/expense/AddTransaction";
 
+// Actions
+import { updateTransaction } from "../actions/expenseAction";
+import { useSelector, useDispatch } from "react-redux";
+
 const Expense = () => {
+  const dispatch = useDispatch();
+  const { transactions } = useSelector((state) => state.expenses);
+
+  const [text, setText] = useState("");
+  const [amount, setAmount] = useState(0);
+  const [isEditItem, setIsEditItem] = useState(null);
+  const [toggleSubmit, setToggleSubmit] = useState(false);
+
+  const updateHandler = (id) => {
+    let newEditItem = transactions.find((el) => {
+      return el._id === id;
+    });
+
+    setText(newEditItem.text);
+    setAmount(newEditItem.amount);
+    setIsEditItem(newEditItem._id);
+  };
+
+  const updateExpenseHandler = (e) => {
+    e.preventDefault();
+    const editedTransaction = {
+      text,
+      amount,
+    };
+    dispatch(updateTransaction(isEditItem, editedTransaction));
+
+    setText("");
+    setAmount(0);
+  };
+
   return (
     <ExpenseStyle>
       <div className="container">
@@ -71,10 +51,25 @@ const Expense = () => {
           <Header />
           <Balance />
           <IncomeExpense />
-          <AddTransaction />
+          <AddTransaction
+            text={text}
+            setText={setText}
+            amount={amount}
+            setAmount={setAmount}
+            toggleSubmit={toggleSubmit}
+            setToggleSubmit={setToggleSubmit}
+            isEditItem={isEditItem}
+            updateHandler={updateHandler}
+            updateExpenseHandler={updateExpenseHandler}
+          />
         </div>
         <div className="content">
-          <TransactionList />
+          <TransactionList
+            updateHandler={updateHandler}
+            toggleSubmit={toggleSubmit}
+            setToggleSubmit={setToggleSubmit}
+            updateExpenseHandler={updateExpenseHandler}
+          />
         </div>
       </div>
     </ExpenseStyle>
