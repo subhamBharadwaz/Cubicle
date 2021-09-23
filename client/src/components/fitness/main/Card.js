@@ -36,12 +36,19 @@ const Container = styled.div`
   background: rgba(0, 0, 0, 0.616);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.5s;
-  width: 30rem;
-  height: 32rem;
+  width: 100%;
+
   border: none;
   font-size: 1.5rem;
   padding: 1rem;
   margin: 0 3rem;
+
+  @media (min-width: 40rem) {
+    width: 50%;
+  }
+  @media (min-width: 56rem) {
+    width: 33.3%;
+  }
 
   flex-wrap: wrap;
   &:hover {
@@ -70,6 +77,7 @@ const Container = styled.div`
     text-align: right;
     padding-top: 2rem;
   }
+
   @media (max-width: 48rem) {
     margin: 0.3rem;
     margin-bottom: 6.5rem;

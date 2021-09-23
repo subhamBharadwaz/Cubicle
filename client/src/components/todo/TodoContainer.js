@@ -79,11 +79,11 @@ const TodoContainer = () => {
   return (
     <Container>
       <FormStyle onSubmit={toggleSubmit ? updateTodoHandler : submitHandler}>
-        <Select>
+        {/* <Select>
           <button onClick={getAllTodoHandler}>All</button>
           <button onClick={getCompletedTodoHandler}>Completed</button>
           <button onClick={getUncompletedTodoHandler}>Uncompleted</button>
-        </Select>
+        </Select> */}
         <div className="form-control">
           <InputStyle
             onChange={(e) => setText(e.target.value)}

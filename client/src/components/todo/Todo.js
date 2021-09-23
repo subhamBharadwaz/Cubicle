@@ -28,13 +28,13 @@ const Todo = ({ todo, updateHandler, setToggleSubmit }) => {
       <TodoStyle>
         <div>
           <li>{todo.text}</li>
-          <button className="btn completed">
+          {/* <button className="btn completed">
             <FontAwesomeIcon
               icon={faCheck}
               className="icon completed"
               onClick={completeTodoHandler}
             />
-          </button>
+          </button> */}
         </div>
       </TodoStyle>
 
