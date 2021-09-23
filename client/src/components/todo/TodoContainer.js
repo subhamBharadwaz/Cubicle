@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 // Components
 
 import TodoList from "./TodoList";
@@ -66,19 +66,25 @@ const TodoContainer = () => {
     setText("");
   };
 
-  const updateTodoHandler = (e) => {
-    e.preventDefault();
-    const editedTodo = {
-      text,
-    };
-    dispatch(updateTodo(isEditItem, editedTodo));
+  const updateTodoHandler = useCallback(
+    (e) => {
+      e.preventDefault();
+      const editedTodo = {
+        text,
+      };
+      dispatch(updateTodo(isEditItem, editedTodo));
 
-    setText("");
-  };
+      setText("");
+      setToggleSubmit(false);
+    },
+    [dispatch, isEditItem, text]
+  );
 
   return (
     <Container>
-      <FormStyle onSubmit={toggleSubmit ? updateTodoHandler : submitHandler}>
+      <FormStyle
+        onSubmit={toggleSubmit === true ? updateTodoHandler : submitHandler}
+      >
         {/* <Select>
           <button onClick={getAllTodoHandler}>All</button>
           <button onClick={getCompletedTodoHandler}>Completed</button>
@@ -93,7 +99,7 @@ const TodoContainer = () => {
           />
           <button className="btn add-todo-btn">
             <FontAwesomeIcon
-              icon={toggleSubmit ? faEdit : faPlus}
+              icon={toggleSubmit === true ? faEdit : faPlus}
               className="icon add-icon"
             />
           </button>{" "}

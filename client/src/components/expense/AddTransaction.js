@@ -35,7 +35,9 @@ export const AddTransaction = ({
   return (
     <AddTransactionStyle>
       <h3>Add new transaction</h3>
-      <form onSubmit={toggleSubmit ? updateExpenseHandler : submitHandler}>
+      <form
+        onSubmit={toggleSubmit === true ? updateExpenseHandler : submitHandler}
+      >
         <div className="form-control">
           <label htmlFor="text">Text</label>
           <input
@@ -58,7 +60,7 @@ export const AddTransaction = ({
           />
         </div>
         <button className="btn">
-          {toggleSubmit ? "Update Transaction" : "Add Transaction"}
+          {toggleSubmit === true ? "Update Transaction" : "Add Transaction"}
         </button>
       </form>
     </AddTransactionStyle>

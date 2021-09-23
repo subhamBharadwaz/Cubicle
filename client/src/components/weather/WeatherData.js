@@ -33,7 +33,7 @@ const WeatherData = () => {
         <BsIcons.BsSearch id="search" />
       </div>
       <form onSubmit={searchHandler} className="form">
-        <label htmlFor="searchWeather">Another City</label>
+        <label htmlFor="searchWeather">Search Another City</label>
         <input
           onChange={onChangeHandler}
           value={input}

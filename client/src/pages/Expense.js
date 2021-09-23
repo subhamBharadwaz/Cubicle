@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 // Style
 import styled from "styled-components";
 
@@ -32,17 +32,21 @@ const Expense = () => {
     setIsEditItem(newEditItem._id);
   };
 
-  const updateExpenseHandler = (e) => {
-    e.preventDefault();
-    const editedTransaction = {
-      text,
-      amount,
-    };
-    dispatch(updateTransaction(isEditItem, editedTransaction));
+  const updateExpenseHandler = useCallback(
+    (e) => {
+      e.preventDefault();
+      const editedTransaction = {
+        text,
+        amount,
+      };
+      dispatch(updateTransaction(isEditItem, editedTransaction));
 
-    setText("");
-    setAmount(0);
-  };
+      setText("");
+      setAmount(0);
+      setToggleSubmit(false);
+    },
+    [amount, dispatch, isEditItem, text]
+  );
 
   return (
     <ExpenseStyle>
