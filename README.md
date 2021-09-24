@@ -4,7 +4,7 @@
 
 ## Video & Screenshots
 
-[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/72348711/134618635-3928ca5e-5253-4172-800a-b779f36749fa.png)](https://www.youtube.com/watch?v=5IR8ffltv8w)
+[![Cubicle Video](https://user-images.githubusercontent.com/72348711/134618635-3928ca5e-5253-4172-800a-b779f36749fa.png)](https://www.youtube.com/watch?v=5IR8ffltv8w)
 
 ![Home](https://user-images.githubusercontent.com/72348711/134617691-7541002b-66ab-407d-b73c-e18d87d64ce1.png)
 
