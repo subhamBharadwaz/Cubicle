@@ -2,7 +2,7 @@
 
 ## Technology - **MERN**
 
-## Video & Screenshots
+### Video & Screenshots
 
 [![Cubicle Video](https://user-images.githubusercontent.com/72348711/134618635-3928ca5e-5253-4172-800a-b779f36749fa.png)](https://www.youtube.com/watch?v=5IR8ffltv8w)
 
@@ -26,23 +26,25 @@
 
 ---
 
-## Specs
+### Specs
 
-1.User authentication.(must be login or register to view the pages)
+1. User authentication.(must be login or register to view the pages)
 
-1.View current weather (can search by city names)
+1. View current weather (can search by city names)
 
-1.Vew latest news around the world.
+1. Vew latest news around the world.
 
-1 Add Todo List.
+1. Add Todo List.
 
-1.Add Expenses.
+1. Add Expenses.
 
-1.Fitness Zone.
+1. Fitness Zone.
+
+1. Live Chat.
 
 ---
 
-## Tools
+### Tools
 
 - React - https://reactjs.org/
 - Node.js - https://nodejs.org/en/
@@ -51,43 +53,11 @@
 - Git - https://git-scm.com/
 - MongoDB - https://www.mongodb.com/
 
-## NPM Packages
-
-_For Frontend:_
-
-- axios - https://www.npmjs.com/package/axios
-- react-icons - https://react-icons.github.io/react-icons/
-- redux - https://redux.js.org/
-- redux-thunk - https://www.npmjs.com/package/redux-thunk
-- styled-components - https://styled-components.com/
-- uuid - https://www.npmjs.com/package/uuid
-
-_For Backend:_
-
-- dotenv - https://github.com/motdotla/dotenv#readme
-- morgan - https://github.com/expressjs/morgan
-- colors - https://github.com/Marak/colors.js
-- slugify - https://github.com/simov/slugify
-
-- bcryptjs - https://github.com/dcodeIO/bcrypt.js#readme
-- jsonwebtoken - https://github.com/auth0/node-jsonwebtoken
-
-- express-mongo-sanitize - https://github.com/fiznool/express-mongo-sanitize#readme
-- xss-clean - https://github.com/jsonmaur/xss-clean
-- helmet - https://github.com/helmetjs/helmet
-- hpp - https://github.com/analog-nico/hpp
-- express-rate-limit - https://github.com/nfriedly/express-rate-limit
-- nodemon - https://www.npmjs.com/package/nodemon
-
-_Connect Backend with frontend:_
-
-- concurrently - https://www.npmjs.com/package/concurrently
-
 ---
 
-## Installation
+### Installation
 
-1.Change **config/config.env.env** to **config/config.env** and change the following to your own values --->
+1. Change **config/config.env.env** to **config/config.env** and change the following to your own values --->
 
 ```console
 NODE_ENV=  _(development or production)_
@@ -101,7 +71,7 @@ JWT_EXPIRE= (I used 30 days here as 30d)
 JWT_COOKIE_EXPIRE= (I used 30 here)
 ```
 
-2.There are 4 scripts in package.json located in the root folder
+2. There are 4 scripts in package.json located in the root folder
 
 ```javascript
    "start": "NODE_ENV=production node server",
