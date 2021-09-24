@@ -2,21 +2,25 @@
 
 ## Technology - **MERN**
 
-## Screenshots
+## Video & Screenshots
 
-![Home](https://user-images.githubusercontent.com/72348711/126858811-9f480888-e6af-4c97-a64c-68b82634eb34.png)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/bONb0hv2Eig/0.jpg)](https://www.youtube.com/watch?v=bONb0hv2Eig)
+
+![Home](https://user-images.githubusercontent.com/72348711/134617691-7541002b-66ab-407d-b73c-e18d87d64ce1.png)
 
 ![Register](https://user-images.githubusercontent.com/72348711/126858855-4e30369e-df8c-4096-a7eb-aeec161ee6da.png)
 
 ![Login](https://user-images.githubusercontent.com/72348711/126858863-f732ff1d-a9f8-496a-adb6-7dc44b575e27.png)
 
-![Weather](https://user-images.githubusercontent.com/72348711/126858882-76cc1331-2455-4fcf-8bcb-1d91b8c453b7.png)
+![Weather](https://user-images.githubusercontent.com/72348711/134617743-e31533fe-dcb5-4a31-8d69-b851e8a96878.png)
 
-![News](https://user-images.githubusercontent.com/72348711/126858891-3f9fbdb1-7705-4c42-a839-bd1e711023d1.png)
+![News](https://user-images.githubusercontent.com/72348711/134617893-6d354ca3-9e29-47e6-ae71-51ca0c12c450.png)
 
-![Todo List](https://user-images.githubusercontent.com/72348711/126858900-eccd23a1-0fe7-49cd-87c4-e829b6aafd50.png)
+![Live Chat](https://user-images.githubusercontent.com/72348711/134617830-59d93ee6-5c77-4ba7-a45d-6f17e7a47cda.png)
 
-![Expense Tracker](https://user-images.githubusercontent.com/72348711/126858912-d762aa1f-d059-48a3-af36-fcdfc50522dc.png)
+![Todo List](https://user-images.githubusercontent.com/72348711/134617782-3f3b0b47-7d4c-4141-b52a-65935590d1ac.png)
+
+![Expense Tracker](https://user-images.githubusercontent.com/72348711/134617795-c0fffbd6-eeab-40b4-ac6b-c30fa4ccb5f5.png)
 
 ![Fitness](https://user-images.githubusercontent.com/72348711/126858923-642b9feb-1585-4786-b6a0-e7abf1a1300c.png)
 
